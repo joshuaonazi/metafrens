@@ -48,32 +48,3 @@ document.addEventListener('DOMContentLoaded', () => {
   sections.forEach(section => spyObserver.observe(section));
 
 });
-
-// Calendar nav buttons — starts at August 2026, scrolls forward/back indefinitely
-const calPrev = document.getElementById('calPrev');
-const calNext = document.getElementById('calNext');
-const calMonthLabel = document.getElementById('calMonthLabel');
-
-const monthNames = [
-  'January', 'February', 'March', 'April', 'May', 'June',
-  'July', 'August', 'September', 'October', 'November', 'December'
-];
-
-// Start date: August 2026
-let calDate = new Date(2026, 7, 1); // month is 0-indexed, so 7 = August
-
-function renderCalMonth() {
-  calMonthLabel.textContent = `${monthNames[calDate.getMonth()]} ${calDate.getFullYear()}`;
-}
-
-calPrev?.addEventListener('click', () => {
-  calDate.setMonth(calDate.getMonth() - 1);
-  renderCalMonth();
-});
-
-calNext?.addEventListener('click', () => {
-  calDate.setMonth(calDate.getMonth() + 1);
-  renderCalMonth();
-});
-
-renderCalMonth(); // set initial label on load
