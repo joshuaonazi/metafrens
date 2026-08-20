@@ -1,0 +1,22 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bubbleFillPeople" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.12"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Speech bubble with tail -->
+  <path d="M30 20 H170 A20 20 0 0 1 190 40 V120 A20 20 0 0 1 170 140 H80 L55 168 V140 H30 A20 20 0 0 1 10 120 V40 A20 20 0 0 1 30 20 Z"
+        fill="url(#bubbleFillPeople)" stroke="#ffffff" stroke-opacity="0.5" stroke-width="2"/>
+
+  <!-- Three-person icon -->
+  <g fill="#ffffff">
+    <circle cx="72" cy="68" r="14"/>
+    <path d="M72 86c-16 0-28 9-28 20v6h56v-6c0-11-12-20-28-20z"/>
+    <circle cx="118" cy="60" r="11"/>
+    <path d="M118 75c-13 0-23 7-23 16v5h46v-5c0-9-10-16-23-16z"/>
+    <circle cx="140" cy="75" r="9"/>
+    <path d="M140 88c-10 0-18 6-18 13v4h36v-4c0-7-8-13-18-13z"/>
+  </g>
+</svg>
