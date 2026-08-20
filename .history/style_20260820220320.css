@@ -925,7 +925,10 @@ ul { list-style: none; }
 /* =========================================
    FOOTER
    ========================================= */
-
+.site-footer > #img { 
+  display: block; 
+  margin: 0 auto 40px; 
+  max-width: 160px; }
 .site-footer {
   background: var(--bg-deep-2);
   padding: 70px 32px 0;
@@ -946,7 +949,6 @@ ul { list-style: none; }
   max-width: 320px;
   line-height: 1.6;
 }
-.footer-brand .logo-badge img { height: 50px; width: auto; }
 .footer-links h5, .footer-social h5 {
   font-family: var(--font-display);
   font-weight: 600;
