@@ -1073,12 +1073,6 @@ button:focus-visible {
   .partners-cta { flex-direction: column; align-items: stretch; text-align: center; }
   .cta-text { text-align: center; }
 
-    /* Contact */
-  .contact-wrap { grid-template-columns: 1fr; gap: 50px; }
-  .contact-left { text-align: center; display: flex; flex-direction: column; align-items: center; }
-  .contact-sub { text-align: center; }
-  .contact-cards { max-width: 500px; width: 100%; }
-
   /* Footer */
   .footer-inner { grid-template-columns: 1fr; gap: 32px; text-align: center; }
   .footer-brand { display: flex; flex-direction: column; align-items: center; }
@@ -1133,12 +1127,6 @@ button:focus-visible {
   .partner-card { width: 200px; padding: 20px 18px; }
   .partners-divider { margin-bottom: 34px; }
 
-    /* Contact */
-  .contact { padding: 70px 20px; }
-  .contact-card { padding: 16px; }
-  .contact-illustration { max-width: 320px; }
-  .social-circle { width: 44px; height: 44px; }
-
   /* Footer */
   .site-footer { padding: 50px 20px 0; }
 }
@@ -1187,12 +1175,6 @@ button:focus-visible {
   .partners-sub { font-size: .88rem; }
   .partner-card { width: 170px; padding: 16px; }
   .partner-top h4 { font-size: .92rem; }
-
-    /* Contact */
-  .contact-heading { font-size: 2.2rem; }
-  .contact-sub { font-size: .9rem; }
-  .contact-card-value { font-size: .9rem; }
-  .social-circle { width: 40px; height: 40px; }
 
   /* Footer */
   .footer-brand p { font-size: .85rem; }
