@@ -913,16 +913,16 @@ button:focus-visible {
   /* Testimonials */
   .testimonial-grid { grid-template-columns: 1fr; }
 
-      /* Partners */
-  .partners-cta { flex-direction: column; align-items: stretch; text-align: center; }
-  .cta-text { text-align: center; }
-
   /* Footer */
   .footer-inner { grid-template-columns: 1fr; gap: 32px; text-align: center; }
   .footer-brand { display: flex; flex-direction: column; align-items: center; }
   .footer-brand p { max-width: 400px; }
   .footer-links a { margin-bottom: 10px; }
   .social-icons { justify-content: center; }
+
+    /* Partners */
+  .partners-cta { flex-direction: column; align-items: stretch; text-align: center; }
+  .cta-text { text-align: center; }
 }
 
 /* ---------- 600px — phones ---------- */
@@ -1013,12 +1013,6 @@ button:focus-visible {
   .cal-event-title { font-size: .5rem; }
   .cal-month-label { font-size: 1.05rem; }
   .cal-nav-btn { width: 30px; height: 30px; }
-
-    /* Partners */
-  .partners-heading { font-size: 2rem; }
-  .partners-sub { font-size: .88rem; }
-  .partner-card { width: 170px; padding: 16px; }
-  .partner-top h4 { font-size: .92rem; }
 
   /* Footer */
   .footer-brand p { font-size: .85rem; }
