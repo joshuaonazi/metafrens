@@ -667,7 +667,7 @@ ul { list-style: none; }
   transition: background .2s;
 }
 .partner-card:hover .partner-x-badge { background: var(--brand-purple); 
-}
+
 /* --- CTA bar --- */
 .partners-cta {
   position: relative;
@@ -707,6 +707,9 @@ ul { list-style: none; }
   letter-spacing: .5px;
   white-space: nowrap;
   transition: transform .25s, box-shadow .25s;
+}
+.partners-cta > .cta-btn {
+color: var(--purple);
 }
 .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(119,66,236,.4); }
 

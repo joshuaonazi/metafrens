@@ -667,7 +667,7 @@ ul { list-style: none; }
   transition: background .2s;
 }
 .partner-card:hover .partner-x-badge { background: var(--brand-purple); 
-}
+
 /* --- CTA bar --- */
 .partners-cta {
   position: relative;
