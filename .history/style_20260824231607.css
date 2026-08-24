@@ -152,7 +152,7 @@ ul { list-style: none; }
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 2px;
-  background: var(--brand-purple);
+  background: var(--white);
   border-radius: 2px;
 }
 
