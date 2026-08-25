@@ -509,7 +509,6 @@ ul { list-style: none; }
   overflow: hidden;
   --testimonial-gap: 30px;
   --testimonial-width: min(1200px, calc(100vw - 64px));
-  --testimonial-visible: 3;
 }
 .testimonial-track {
   display: flex;
@@ -519,18 +518,17 @@ ul { list-style: none; }
 }
 .testimonial-set {
   display: flex;
-  width: calc((var(--testimonial-width) + var(--testimonial-gap)) * 9 / 3 - var(--testimonial-gap));
+  width: var(--testimonial-width);
   flex: 0 0 auto;
   gap: var(--testimonial-gap);
-  align-items: flex-start;
 }
 @keyframes testimonials-slide-left {
   from { transform: translateX(0); }
-  to { transform: translateX(calc(-1 * (var(--testimonial-width) + var(--testimonial-gap)) * 9 / var(--testimonial-visible))); }
+  to { transform: translateX(calc(-1 * (var(--testimonial-width) + var(--testimonial-gap)))); }
 }
 .testimonial-track:hover { animation-play-state: paused; }
 .testimonial-card {
-  flex: 0 0 calc((var(--testimonial-width) - (var(--testimonial-gap) * 2)) / 3);
+  flex: 0 0 calc((100% - (var(--testimonial-gap) * 2)) / 3);
 }
 .testimonial-card {
   background: var(--surface-light);
@@ -550,7 +548,6 @@ ul { list-style: none; }
   margin-bottom: 24px;
 }
 .testimonial-author { display: flex; align-items: center; gap: 12px; }
-.testimonial-author { color: inherit; text-decoration: none; }
 .testimonial-author img {
   width: 46px; height: 46px; border-radius: 50%; object-fit: cover;
 }
@@ -744,7 +741,7 @@ ul { list-style: none; }
 .events-cal {
   background: var(--bg-deep);
   color: var(--white);
-  padding: 50px 40px;
+  padding: 90px 40px;
 }
 .cal-wrap {
   max-width: 1500px;
@@ -755,52 +752,19 @@ ul { list-style: none; }
   align-items: start;
 }
 
-.cal-side {
-  padding-top: 6px;
-  max-height: none;
-  overflow: visible;
-  padding-right: 0;
-}
+.cal-side { padding-top: 6px; }
 .cal-header-top {
   text-align: center;
   max-width: 700px;
-  margin: 0 auto 30px;
+  margin: 0 auto 60px;
 }
 
 .event-info-card {
-  width: 100%;
   background: rgba(255,255,255,.03);
   border: 1px solid rgba(255,255,255,.1);
-  border-radius: 14px;
-  padding: 18px 18px;
-  margin-bottom: 14px;
-  overflow: visible;
-}
-.event-info-title {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.02rem;
-  color: var(--white);
-  margin-bottom: 8px;
-}
-.event-info-text {
-  font-size: .78rem;
-  line-height: 1.5;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-}
-.event-info-text:last-of-type { margin-bottom: 12px; }
-.event-info-schedule {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: .7rem;
-  font-weight: 600;
-  color: var(--accent-mint);
-  border: 1px solid rgba(20,232,184,.3);
-  background: rgba(20,232,184,.06);
-  padding: 6px 12px;
-  border-radius: 18px;
+  border-radius: 16px;
+  padding: 24px 22px;
+  margin-bottom: 20px;
 }
 .event-info-title {
   font-family: var(--font-display);
@@ -814,7 +778,6 @@ ul { list-style: none; }
   line-height: 1.65;
   color: var(--text-muted);
   margin-bottom: 10px;
-  overflow-wrap: anywhere;
 }
 .event-info-text:last-of-type { margin-bottom: 16px; }
 .event-info-schedule {
@@ -828,8 +791,6 @@ ul { list-style: none; }
   background: rgba(20,232,184,.06);
   padding: 7px 14px;
   border-radius: 20px;
-  max-width: 100%;
-  white-space: normal;
 }
 .cal-eyebrow {
   font-size: .78rem;
@@ -912,17 +873,8 @@ ul { list-style: none; }
 
 .cal-grid {
   display: grid;
-  width: 100%;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 6px;
-}
-.cal-cell {
-  position: relative;
-  aspect-ratio: 1 / 0.6;
-  background: rgba(255,255,255,.03);
-  border: 1px solid rgba(255,255,255,.06);
-  border-radius: 9px;
-  padding: 7px;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
 }
 .cal-dow {
   font-size: .78rem;
@@ -930,6 +882,14 @@ ul { list-style: none; }
   letter-spacing: 1px;
   color: var(--text-muted);
   padding-bottom: 10px;
+}
+.cal-cell {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 14px;
+  padding: 12px;
 }
 .cal-daynum {
   font-size: .75rem;
@@ -1248,8 +1208,7 @@ button:focus-visible {
   .founder-col { order: -1; }
 
   /* Testimonials */
-  .testimonial-grid { width: 100%; --testimonial-width: calc(100vw - 64px); --testimonial-visible: 1; }
-  .testimonial-set { width: calc((var(--testimonial-width) + var(--testimonial-gap)) * 9 - var(--testimonial-gap)); }
+  .testimonial-grid { width: 100%; --testimonial-width: calc(100vw - 64px); }
   .testimonial-card { flex-basis: 100%; }
 
       /* Partners */
@@ -1258,8 +1217,6 @@ button:focus-visible {
 
     /* Events calendar */
   .cal-header-top { margin-bottom: 40px; }
-  .cal-side { max-height: none; overflow-y: visible; padding-right: 0; }
-  .cal-side { width: 100%; }
 
     /* Contact */
   .contact-wrap { grid-template-columns: 1fr; gap: 50px; }
@@ -1298,23 +1255,15 @@ button:focus-visible {
   .founder-card { width: 170px; height: 170px; }
   .member-card img { width: 84px; height: 84px; }
   .testimonial-card { padding: 26px 20px; }
-  .testimonial-grid { width: 100%; --testimonial-width: calc(100vw - 40px); --testimonial-visible: 1; }
-  .testimonial-set { width: calc((var(--testimonial-width) + var(--testimonial-gap)) * 9 - var(--testimonial-gap)); }
+  .testimonial-grid { width: 100%; --testimonial-width: calc(100vw - 40px); }
   .testimonial-card { flex-basis: 100%; }
 
   /* Events calendar */
   .events-cal { padding: 60px 16px; }
-  .cal-main { min-width: 0; overflow: hidden; }
-  .event-info-card { padding: 16px; }
-  .event-info-schedule { align-items: flex-start; }
   .cal-topbar { flex-direction: column; align-items: stretch; gap: 14px; }
   .cal-month-nav { justify-content: center; }
   .cal-add-btn { justify-content: center; }
-  .cal-grid {
-    min-width: 0;
-    overflow-x: visible;
-    gap: 5px;
-  }
+  .cal-grid { gap: 5px; }
   .cal-dow { font-size: .58rem; text-align: center; padding-bottom: 4px; letter-spacing: 0; }
   .cal-cell { border-radius: 8px; padding: 5px; }
   .cal-daynum { font-size: .65rem; }
@@ -1368,14 +1317,18 @@ button:focus-visible {
   .quote { font-size: .88rem; }
 
   /* Events calendar */
+  .cal-wrap {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 380px 1fr;  /* was 320px 1fr */
+    gap: 60px;
+  }
   .cal-heading { font-size: 2.2rem; }
   .cal-desc { max-width: 100%; }
   .cal-grid {
     display: grid;
-    width: 100%;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-    min-width: 0;
-    overflow-x: visible;
+    grid-template-columns: repeat(7, 1fr);
     gap: 7px;
   }
   .cal-cell {

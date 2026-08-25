@@ -509,7 +509,6 @@ ul { list-style: none; }
   overflow: hidden;
   --testimonial-gap: 30px;
   --testimonial-width: min(1200px, calc(100vw - 64px));
-  --testimonial-visible: 3;
 }
 .testimonial-track {
   display: flex;
@@ -519,14 +518,13 @@ ul { list-style: none; }
 }
 .testimonial-set {
   display: flex;
-  width: calc((var(--testimonial-width) + var(--testimonial-gap)) * 9 / 3 - var(--testimonial-gap));
+  width: calc((var(--testimonial-width) + var(--testimonial-gap)) * 5 / 3 - var(--testimonial-gap));
   flex: 0 0 auto;
   gap: var(--testimonial-gap);
-  align-items: flex-start;
 }
 @keyframes testimonials-slide-left {
   from { transform: translateX(0); }
-  to { transform: translateX(calc(-1 * (var(--testimonial-width) + var(--testimonial-gap)) * 9 / var(--testimonial-visible))); }
+  to { transform: translateX(calc(-1 * (var(--testimonial-width) + var(--testimonial-gap)))); }
 }
 .testimonial-track:hover { animation-play-state: paused; }
 .testimonial-card {
@@ -1248,8 +1246,8 @@ button:focus-visible {
   .founder-col { order: -1; }
 
   /* Testimonials */
-  .testimonial-grid { width: 100%; --testimonial-width: calc(100vw - 64px); --testimonial-visible: 1; }
-  .testimonial-set { width: calc((var(--testimonial-width) + var(--testimonial-gap)) * 9 - var(--testimonial-gap)); }
+  .testimonial-grid { width: 100%; --testimonial-width: calc(100vw - 64px); }
+  .testimonial-set { width: calc((var(--testimonial-width) + var(--testimonial-gap)) * 5 - var(--testimonial-gap)); }
   .testimonial-card { flex-basis: 100%; }
 
       /* Partners */
@@ -1298,8 +1296,8 @@ button:focus-visible {
   .founder-card { width: 170px; height: 170px; }
   .member-card img { width: 84px; height: 84px; }
   .testimonial-card { padding: 26px 20px; }
-  .testimonial-grid { width: 100%; --testimonial-width: calc(100vw - 40px); --testimonial-visible: 1; }
-  .testimonial-set { width: calc((var(--testimonial-width) + var(--testimonial-gap)) * 9 - var(--testimonial-gap)); }
+  .testimonial-grid { width: 100%; --testimonial-width: calc(100vw - 40px); }
+  .testimonial-set { width: calc((var(--testimonial-width) + var(--testimonial-gap)) * 5 - var(--testimonial-gap)); }
   .testimonial-card { flex-basis: 100%; }
 
   /* Events calendar */
