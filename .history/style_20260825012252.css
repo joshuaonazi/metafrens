@@ -503,6 +503,7 @@ ul { list-style: none; }
   color: var(--bg-deep-2);
   text-align: center;
 }
+.testimonial .eyebrow { color: var(--brand-purple); }
 .testimonial-grid {
   width: min(1200px, calc(100vw - 64px));
   margin: 0 auto;
