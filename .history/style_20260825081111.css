@@ -798,9 +798,6 @@ ul { list-style: none; }
   color: var(--brand-purple);
   margin-bottom: 18px;
 }
-.cal-eyebrow span {
-  color: var(--white)
-}
 .cal-heading {
   font-family: var(--font-display);
   font-weight: 700;

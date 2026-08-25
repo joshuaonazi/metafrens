@@ -757,6 +757,13 @@ ul { list-style: none; }
   max-width: 700px;
   margin: 0 auto 60px;
 }
+.cal-top-desc {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0 auto 30px;
+  max-width: 480px;
+}
 
 .event-info-card {
   background: rgba(255,255,255,.03);
@@ -798,9 +805,6 @@ ul { list-style: none; }
   color: var(--brand-purple);
   margin-bottom: 18px;
 }
-.cal-eyebrow span {
-  color: var(--white)
-}
 .cal-heading {
   font-family: var(--font-display);
   font-weight: 700;
@@ -811,7 +815,7 @@ ul { list-style: none; }
   margin-bottom: 26px;
 }
 .cal-heading span {
-  /* display: block; */
+  display: block;
   background: linear-gradient(90deg, var(--brand-purple), var(--brand-magenta));
   -webkit-background-clip: text;
   background-clip: text;
