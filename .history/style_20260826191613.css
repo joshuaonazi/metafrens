@@ -987,10 +987,9 @@ ul { list-style: none; }
 }
 .cal-event-icon svg { width: 9px; height: 9px; }
 .cal-event-title {
-  font-size: .6rem;
+  font-size: .68rem;
   font-weight: 700;
   line-height: 1.15;
-  white-space: nowrap;
 }
 .cal-event-time {
   font-size: .55rem;

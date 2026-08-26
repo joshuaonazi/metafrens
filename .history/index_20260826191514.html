@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>METAFRENS</title>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=chillax@400,500,600,700&f[]=switzer@400,500,600,700&display=swap" rel="stylesheet">
+<link href="">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== HEADER / NAV ===== -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-wrap">
+    <a href="#home" class="logo">
+      <img src="assets/metafrens-logo-white.png" alt="MetaFrens logo" class="logo-img">
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#team" class="nav-link">Team</a>
+      <a href="#testimonials" class="nav-link">Testimonials</a>
+      <a href="#events" class="nav-link">Events</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <a href="#events" class="btn-register">Join METAFRENS <span>→</span></a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== HOME / HERO ===== -->
+<section id="home" class="hero">
+  <div class="hero-bg"></div>
+
+  <div class="hero-content">
+    <h1 class="hero-title">METAFRENS</h1>
+    <span class="hero-underline"></span>
+    <p class="hero-sub">METAFRENS is a vibrant community where creators, dreamers and doers connect, share and grow together.</p>
+  </div>
+
+  <div class="hero-mascot-wrap">
+    <!-- Mascot — uses your uploaded file, sized/positioned to match the reference -->
+    <img src="assets/mascot.png" alt="MetaFrens mascot waving" class="hero-mascot">
+
+    <!-- Floating icon bubbles — placeholders. Point each src at a file on
+         your machine (e.g. "assets/icon-people.png"); position/size are
+         already set to match the reference image. -->
+    <img src="assets/icon-people.png" alt="Community icon" class="hero-float hero-float-1">
+    <img src="assets/icon-heart.png" alt="Likes icon" class="hero-float hero-float-2">
+    <img src="assets/icon-rocket.png" alt="Growth icon" class="hero-float hero-float-3">
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="about">
+  <div class="about-wrap">
+
+    <!-- LEFT: intro -->
+    <div class="about-left">
+      <!-- <span class="about-eyebrow">WHO WE ARE</span> -->
+      <h2 class="about-heading">WHO<span> WE ARE</span></h2>
+      <p class="about-text">METAFRENS was officially founded in September 2022, and since then, 
+                            we’ve evolved into a vibrant community of Web3 enthusiasts united by a shared 
+                            passion for NFTs, Ordinals, and DeFi. We’re dedicated to exploring the latest trends in Web3, 
+                            fostering fun and insightful conversations, and creating a space where members can learn, grow, 
+                            and build meaningful connections.
+                            <br>Since our inception, we’ve hosted several onboarding sessions across our private Discord and X Spaces, 
+                            helping both our members and wider audience stay informed and better understand the latest developments 
+                            in the ever-evolving Web3 space.</p>
+
+      <div class="about-stats">
+        <div class="about-stat">
+          <span class="stat-num">200+</span>
+          <span class="stat-label">Community Members</span>
+        </div>
+        <div class="about-stat">
+          <span class="stat-num">30+</span>
+          <span class="stat-label">Events Hosted</span>
+        </div>
+        <div class="about-stat">
+          <span class="stat-num">5K+</span>
+          <span class="stat-label">Collaboration</span>
+        </div>
+        <div class="about-stat">
+          <span class="stat-num">10+</span>
+          <span class="stat-label">Partner Projects</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: feature cards -->
+    <div class="about-right">
+      <div class="about-card">
+        <span class="about-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </span>
+        <h4>Community First</h4>
+        <p>Every decision starts with what actually helps our members grow, not what looks good in a deck.</p>
+      </div>
+
+      <div class="about-card">
+        <span class="about-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l9 4.5v9L12 21l-9-4.5v-9L12 3z"/><path d="M12 21V12M3 7.5l9 4.5 9-4.5"/></svg>
+        </span>
+        <h4>Web3 Education</h4>
+        <p>Workshops and AMAs that break real concepts down, no jargon, no empty hype, just clarity.</p>
+      </div>
+
+      <div class="about-card">
+        <span class="about-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg>
+        </span>
+        <h4>Global Network</h4>
+        <p>Frens connect across time zones builders, collectors and creators from every corner of Web3.</p>
+      </div>
+
+      <div class="about-card">
+        <span class="about-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 3.5v6c0 5-3.5 8.5-8 10.5-4.5-2-8-5.5-8-10.5v-6L12 2z"/></svg>
+        </span>
+        <h4>Safe Space</h4>
+        <p>We actively work to protect newcomers from predatory actors and bad-faith projects.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section id="team" class="team">
+  <div class="team-bg">
+    <div class="team-bg-left"></div>
+    <div class="team-bg-right"></div>
+  </div>
+
+  <div class="team-inner">
+    <!-- <p class="eyebrow light">OUR TEAM</p> -->
+    <h2 class="section-title light">MEET THE TEAM</h2>
+
+    <div class="team-grid">
+
+      <!-- LEFT SCROLLING COLUMN -->
+      <div class="team-col">
+        <div class="fade-top"></div>
+        <div class="team-track scroll-up">
+          <a href="https://x.com/krrstyn" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/krrystn.jpg" alt="Team A">
+              <h4>Krrystn</h4> <span>COLLAB MANAGER</span>
+            </div>
+          </a>
+          <a href="https://x.com/totinhiiio" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/totinho.jpg" alt="Team B">
+              <h4>Totinho</h4> <span>COLLAB MANAGER</span>
+            </div>
+          </a>
+          <a href="https://x.com/themafiaboss420" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/themafiaboss.jpg" alt="Team C">
+              <h4>MafiaBoss</h4> <span>COLLAB MANAGER</span>
+            </div>
+          </a>
+          <a href="https://x.com/frans6cur" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/francisca.jpg" alt="Team C">
+              <h4>Fran.Cisca</h4> <span>ALPHA CALLER</span>
+            </div>
+          </a>
+          <a href="https://x.com/starfierygurl" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/xtarielle.jpg" alt="Team C">
+              <h4>Xtarielle</h4> <span>CREATIVE TEAM</span>
+            </div>
+          </a>
+          <a href="https://x.com/only1lufi" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/lulu.jpg" alt="Team C">
+              <h4>LuLu</h4> <span>CREATIVE TEAM</span>
+            </div>
+          </a>
+          <!-- duplicate for seamless loop -->
+          <a href="https://x.com/0xcobra_" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/0xcobra.jpg" alt="Team A">
+              <h4>0xCobra</h4> <span>ALPHA CALLER</span>
+            </div>
+          </a>
+          <a href="https://x.com/kimmykim_nft" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/kimmykim.jpg" alt="Team B">
+              <h4>KimmyKim</h4> <span>ALPHA CALLER</span>
+            </div>
+          </a>
+          <a href="https://x.com/therealsoft" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/soft.jpg" alt="Team C">
+              <h4>Soft</h4> <span>CREATIVE TEAM</span>
+            </div>
+          </a>
+          <a href="https://x.com/btwritess" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/bigtee.jpg" alt="Team C">
+              <h4>BigTee</h4> <span>CREATIVE TEAM</span>
+            </div>
+          </a>
+          <a href="https://x.com/MadMax_Series" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/madmax.jpg" alt="Team C">
+              <h4>MadMax</h4> <span>CREATIVE TEAM</span>
+            </div>
+          </a>
+          <a href="https://x.com/0xsebastine" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/sebastine.jpg" alt="Team C">
+              <h4>Sebastine❤️‍🔥</h4> <span>CREATIVE TEAM</span>
+            </div>
+          </a>
+        </div>
+        <div class="fade-bottom"></div>
+      </div>
+
+      <!-- CENTER FOUNDER (STATIC) -->
+      <a href="https://x.com/the_sugargirl" target="_blank" rel="noopener noreferrer">
+        <div class="founder-col">
+          <div class="founder-card">
+            <img src="/assets/team/shugapfp.png" alt="Founder">
+          </div>
+          <h3>SugarGirl</h3><span>FOUNDER</span>
+        </div>
+      </a>
+
+      <!-- RIGHT SCROLLING COLUMN -->
+      <div class="team-col">
+        <div class="fade-top"></div>
+        <div class="team-track scroll-down">
+          <a href="https://x.com/exstep" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/exstep.jpg" alt="Team D">
+                <h4>Exstep</h4> <span>MODERATOR</span>
+            </div>
+          </a>
+          <a href="https://x.com/ka_nayo_" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/kanayo.jpg" alt="Team E">
+                <h4>Kanayo</h4> <span>MODERATOR</span>
+            </div>
+          </a>
+          <a href="https://x.com/web3_blizz" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/blissonchain.jpg" alt="Team F">
+              <h4>BlissOnchain</h4> <span>MODERATOR</span>
+            </div>
+          </a>
+          <a href="https://x.com/tweetingintoair" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/jojo.jpg" alt="Team C">
+              <h4>Jojo🧚‍♂️</h4> <span>CREATIVE TEAM</span>
+            </div>
+          </a>
+          <a href="https://x.com/bhussyjoel" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/bhussyjoe.jpg" alt="Team C">
+              <h4>Joe</h4> <span>ALPHA CALLER</span>
+            </div>
+          </a>
+          <a href="https://x.com/adewalearobieke" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/adewale.jpg" alt="Team C">
+              <h4>Adewale</h4> <span>CREATIVE TEAM</span>
+            </div>
+          </a>
+          <!-- duplicate for seamless loop -->
+          <a href="https://x.com/juwdotfun" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/Juw.jpg" alt="Team D">
+              <h4>Juw🔥</h4> <span>MODERATOR</span>
+            </div>
+          </a>
+          <a href="https://x.com/arakraftt" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/arakraft.jpg" alt="Team E">
+              <h4>AraKraft</h4> <span>COLLAB MANAGER</span>
+            </div>
+          </a>
+          <a href="https://x.com/realtinywhale" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/tinywhale.jpg" alt="Team F">
+              <h4>TinyWhale</h4> <span>COLLAB MANAGER</span>
+            </div>
+          </a>
+          <a href="https://x.com/justmichael_7" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/justinm.jpg" alt="Team C">
+              <h4>Justin M</h4> <span>CREATIVE TEAM</span>
+            </div>
+          </a>
+          <a href="https://x.com/Stew_SoFresh" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/stew.jpg" alt="Team C">
+              <h4>Stew1000</h4> <span>CREATIVE TEAM</span>
+            </div>
+          </a>
+        </div>
+        <div class="fade-bottom"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== PARTNERS ===== -->
+<section id="partners" class="partners">
+  <div class="partners-inner">
+    <span class="partners-badge">STRONGER TOGETHER</span>
+    <h2 class="partners-heading">OUR <span>PARTNERS</span></h2>
+    <p class="partners-sub">We collaborate with visionary projects and industry leaders to build the future of Web3 together.</p>
+
+    <div class="partners-divider">
+      <span class="divider-line"></span>
+      <span class="divider-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M11 13l-2 2a2.5 2.5 0 0 1-3.5-3.5l4-4a2.5 2.5 0 0 1 3.5 0"/>
+          <path d="M13 11l2-2a2.5 2.5 0 0 1 3.5 3.5l-4 4a2.5 2.5 0 0 1-3.5 0"/>
+        </svg>
+      </span>
+      <span class="divider-line"></span>
+    </div>
+  </div>
+
+<!-- PARTNERSHIP SECTION -->
+<div class="partners-grid">
+<!-- Partner 1 -->
+  <a href="https://x.com/0xAlphaTrack" target="_blank" rel="noopener noreferrer" class="partner-card">
+    <div class="partner-logo-wrap">
+      <img src="assets/partners/alphatrack.png" alt="Partner 1 name" class="partner-logo-img">
+    </div>
+    <div class="partner-info">
+      <h4 class="partner-name">ALPHA TRACK</h4>
+      <span class="partner-label">MetaFrens Partner</span>
+    </div>
+    <span class="partner-x-badge" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.6-6.9L4.2 22H1l8.1-9.3L.7 2h7.3l5 6.3L18.9 2z"/></svg>
+    </span>
+  </a>
+
+  <!-- Partner 2 -->
+  <a href="https://x.com/DailyMintsAI" target="_blank" rel="noopener noreferrer" class="partner-card">
+    <div class="partner-logo-wrap">
+      <img src="assets/partners/dailymints.png" alt="Partner 2 name" class="partner-logo-img">
+    </div>
+    <div class="partner-info">
+      <h4 class="partner-name">DAILY MINTS</h4>
+      <span class="partner-label">MetaFrens Partner</span>
+    </div>
+    <span class="partner-x-badge" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.6-6.9L4.2 22H1l8.1-9.3L.7 2h7.3l5 6.3L18.9 2z"/></svg>
+    </span>
+  </a>
+
+</div>
+
+</div>
+
+  <div class="partners-cta">
+    <span class="cta-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M11 13l-2 2a2.5 2.5 0 0 1-3.5-3.5l4-4a2.5 2.5 0 0 1 3.5 0"/>
+        <path d="M13 11l2-2a2.5 2.5 0 0 1 3.5 3.5l-4 4a2.5 2.5 0 0 1-3.5 0"/>
+      </svg>
+    </span>
+    <div class="cta-text">
+      <h4>Interested in partnering with METAFRENS?</h4>
+      <p>Let's build the future together.</p>
+    </div>
+    <a href="#" class="cta-btn">PARTNER WITH US <span>↗</span></a>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials" class="testimonials">
+  <h2 class="section-title">TESTIMONIALS</h2>
+
+  <div class="testimonial-grid">
+    <div class="testimonial-track">
+      <div class="testimonial-set">
+        <div class="testimonial-card">
+          <p class="quote">"This is the best free high-value community you'd ever be part of (newbie or not). Whatever your niche is, there's a room for you in Meta. Values ranging from NFT wls, futures trading, regular spaces, etc. They've got it all."</p>
+          <a class="testimonial-author" href="https://x.com/pgreyy" target="_blank" rel="noopener noreferrer">
+            <!-- USING THE UNAVATAR FETCHES THE PROFILE IMAGE ASSOCIATED WITH EACH X HANDLE, THE IMAGE OF THAT X ACCOUNT IS  LOADED REMOTELY <img src="https://unavatar.io/x/staceomi" alt=""> -->
+            <img src="https://unavatar.io/x/pgreyy" alt="">
+            <div>
+              <h5>@pgreyy</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="quote">"Full of so much vibrant and intelligent members. Spanning across various nationalities and web3 specialties, Metafrens is on of the top communities in the space and has all the alpha you need in the space. Goated people, very respectful, supportive and helpful of one another. Happy to be a Metafrens community member 💜"</p>
+          <a class="testimonial-author" href="https://x.com/frans6cur" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/frans6cur" alt="">
+            <div>
+              <h5>@frans6cur</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="quote">"A wise man once said to me <span>If you want to travel fast, travel alone but, if you want to travel far travel with a company</span>. Metafrens is that one company I started my Web3 journey with and I'm forever grateful for. I can confidently say it is the biggest educational community in Web3 consistently building and connecting with key leaders and projects. Metafrens is where you want to be."</p>
+          <a class="testimonial-author" href="https://x.com/realtinywhale" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/realtinywhale" alt="">
+            <div>
+              <h5>@realtinywhale</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="quote">"Will always be grateful to this community and the founder. This community gave me my first Web3 sense of belonging and responsibility. Metafrens is filled with intelligent minds just like the founder. I've made and built genuine friendships from Metafrens and with no regrets they are the best humans Web3 gave me. So beautiful to be part of this diversified community of Web3 enthusiasts."</p>
+          <a class="testimonial-author" href="https://x.com/only1Lufi" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/only1Lufi" alt="">
+            <div>
+              <h5>@only1Lufi</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="quote">"I joined Metafrens in 2023, and I can say for a fact that it has been a wonderful experience/journey since then. I've had the opportunity to meet with amazing folks in Web3 and also connect deeper with a few. I can say for a fact that Metafrens is not just a community; we are a FAMILY. I've also had my share of wins, knowledge and growth tips from Metafrens, and I am deeply grateful for this.</p>
+          <a class="testimonial-author" href="https://x.com/JustMichael_7" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/JustMichael_7" alt="">
+            <div>
+              <h5>@JustMichael_7</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="quote">"I joined Metafrens late last year and it has been a wonderful and beautiful experience ever since. Through Metafrens I made my first 4figs, I have also grown extraordinary well as a content creator and made a lot of friends and connections by being part of this community."</p>
+          <a class="testimonial-author" href="https://x.com/staceomi" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/staceomi" alt="">
+            <div>
+              <h5>@staceomi</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="quote">"Metafrens was the first community I joined as a newbie in the Web3 space. It gave me a true sense of belonging, friendship and purpose. I am grateful to Shuga, she is an awesome founder, for her support and how she has always carried everyone along like one family here. Happy 3 years anniversary of Metafrens family, growth, and unity."</p>
+          <a class="testimonial-author" href="https://x.com/PascalBMS" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/PascalBMS" alt="">
+            <div>
+              <h5>@PascalBMS</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="quote">"Metafrens is my web3 family. I will always be grateful for the privilege to be part of this outstanding family of web3 enthusiasts. Shuga's determination, hard work, resilience and unwavering focus in building Metafrens into an enviable excellent community in the web3 space is a joy to see. I'm grateful for still being here."</p>
+          <a class="testimonial-author" href="https://x.com/Tripxxzz" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/Tripxxzz" alt="">
+            <div>
+              <h5>@Tripxxzz</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="quote">"One of the greatest gifts Metafrens has given me is the opportunity to connect with so many amazing people. Through their support, I've been able to grow as a content creator and speaker. They've also helped me in different real life situations. I'm forever grateful to Metafrens for this."</p>
+          <a class="testimonial-author" href="https://x.com/VAbifarin" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/VAbifarin" alt="">
+            <div>
+              <h5>@VAbifarin</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="testimonial-set" aria-hidden="true">
+        <div class="testimonial-card">
+          <p class="quote">"This is the best free high-value community you'd ever be part of (newbie or not). Whatever your niche is, there's a room for you in Meta. Values ranging from NFT wls, futures trading, regular spaces, etc — they've got it all."</p>
+          <a class="testimonial-author" href="https://x.com/pgreyy" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/pgreyy" alt="">
+            <div>
+              <h5>@pgreyy</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="quote">"Full of so much vibrant and intelligent members. Spanning across various nationalities and web3 specialties, Metafrens is on of the top communities in the space and has all the alpha you need in the space. Goated people, very respectful, supportive and helpful of one another. Happy to be a Metafrens community member 💜"</p>
+          <a class="testimonial-author" href="https://x.com/frans6cur" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/frans6cur" alt="">
+            <div>
+              <h5>@frans6cur</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="quote">"A wise man once said to me \"If you want to travel fast, travel alone but, if you want to travel far travel with a company\". Metafrens is that one company I started my Web3 journey with and I'm forever grateful for. I can confidently say it is the biggest educational community in Web3 consistently building and connecting with key leaders and projects. Metafrens is where you want to be."</p>
+          <a class="testimonial-author" href="https://x.com/realtinywhale" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/realtinywhale" alt="">
+            <div>
+              <h5>@realtinywhale</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="quote">"Will always be grateful to this community and the founder. This community gave me my first Web3 sense of belonging and responsibility. Metafrens is filled with intelligent minds just like the founder. I've made and built genuine friendships from Metafrens and with no regrets they are the best humans Web3 gave me. So beautiful to be part of this diversified community of Web3 enthusiasts."</p>
+          <a class="testimonial-author" href="https://x.com/only1Lufi" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/only1Lufi" alt="">
+            <div>
+              <h5>@only1Lufi</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="quote">"I joined Metafrens in 2023, and I can say for a fact that it has been a wonderful experience/journey since then. I've had the opportunity to meet with amazing folks in Web3 and also connect deeper with a few. I can say for a fact that Metafrens is not just a community; we are a FAMILY. I've also had my share of wins, knowledge and growth tips from Metafrens, and I am deeply grateful for this.</p>
+          <a class="testimonial-author" href="https://x.com/JustMichael_7" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/JustMichael_7" alt="">
+            <div>
+              <h5>@JustMichael_7</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="quote">"I joined Metafrens late last year and it has been a wonderful and beautiful experience ever since. Through Metafrens I made my first 4figs, I have also grown extraordinary well as a content creator and made a lot of friends and connections by being part of this community."</p>
+          <a class="testimonial-author" href="https://x.com/staceomi" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/staceomi" alt="">
+            <div>
+              <h5>@staceomi</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="quote">"Metafrens was the first community I joined as a newbie in the Web3 space. It gave me a true sense of belonging, friendship and purpose. I am grateful to Shuga, she is an awesome founder, for her support and how she has always carried everyone along like one family here. Happy 3 years anniversary of Metafrens family, growth, and unity."</p>
+          <a class="testimonial-author" href="https://x.com/PascalBMS" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/PascalBMS" alt="">
+            <div>
+              <h5>@PascalBMS</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="quote">"Metafrens is my web3 family. I will always be grateful for the privilege to be part of this outstanding family of web3 enthusiasts. Shuga's determination, hard work, resilience and unwavering focus in building Metafrens into an enviable excellent community in the web3 space is a joy to see. I'm grateful for still being here."</p>
+          <a class="testimonial-author" href="https://x.com/Tripxxzz" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/Tripxxzz" alt="">
+            <div>
+              <h5>@Tripxxzz</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="quote">"One of the greatest gifts Metafrens has given me is the opportunity to connect with so many amazing people. Through their support, I've been able to grow as a content creator and speaker. They've also helped me in different real life situations. I'm forever grateful to Metafrens for this."</p>
+          <a class="testimonial-author" href="https://x.com/VAbifarin" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/VAbifarin" alt="">
+            <div>
+              <h5>@VAbifarin</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EVENTS CALENDAR ===== -->
+<section id="events" class="events-cal">
+  <div class="cal-wrap">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="cal-side">
+      <p class="cal-eyebrow">METAFRENS <span>WEEKLY EVENTS</span></p>
+        <div class="event-info-card">
+          <h3 class="event-info-title">Alpha Nights</h3>
+          <p class="event-info-text">Our weekly alpha nights are always packed with fresh alphas! It's a time where we come together as a community to share the latest alphas, uncover hidden gems, discuss emerging trends, and stay one step ahead in the ever-evolving Web3 space.</p>
+          <p class="event-info-text">Beyond the alphas, it's also a great opportunity to connect, build relationships, and strengthen our community bonds.</p>
+          <span class="event-info-schedule">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+            Every Friday · 8:00 PM UTC
+          </span>
+        </div>
+
+        <div class="event-info-card">
+          <h3 class="event-info-title">Metafrens Hangout</h3>
+          <p class="event-info-text">Metafrens Hangout X Spaces are the perfect way to kick off the week. It's a chance for us to unwind, have fun, connect with frens, and, of course, share some alpha.</p>
+          <p class="event-info-text">Beyond the vibes, we host engaging conversations around trending developments in the Web3 space, educational sessions to help our audience and members stay informed about new developments, including AMA sessions with builders and industry leaders.</p>
+          <p class="event-info-text">Our Hangout Spaces also give our wider audience a glimpse into what makes Metafrens Familia unique, including our culture, conversations, and community.</p>
+          <span class="event-info-schedule">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+            Every Sunday · 8:00 PM UTC
+          </span>
+        </div>
+    </aside>
+
+    <!-- CALENDAR -->
+    <div class="cal-main">
+
+      <div class="cal-header-top">
+        <h2 class="cal-heading">EVENTS<span> CALENDAR</span></h2>
+      </div>
+
+      <div class="cal-topbar">
+        <div class="cal-month-nav">
+          <button class="cal-nav-btn" id="calPrev" aria-label="Previous month">‹</button>
+          <h3 class="cal-month-label" id="calMonthLabel">August 2026</h3>
+          <button class="cal-nav-btn" id="calNext" aria-label="Next month">›</button>
+        </div>
+        <button class="cal-add-btn">
+          ADD TO CALENDAR
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="3"></rect>
+            <path d="M3 9h18M8 2v4M16 2v4"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="cal-grid" id="calGrid">
+        <div class="cal-dow">MON</div>
+        <div class="cal-dow">TUE</div>
+        <div class="cal-dow">WED</div>
+        <div class="cal-dow">THU</div>
+        <div class="cal-dow">FRI</div>
+        <div class="cal-dow">SAT</div>
+        <div class="cal-dow">SUN</div>
+        <!-- Day cells are generated in script.js (buildCalendar) so the
+             grid always matches the real weekdays/day-count for whatever
+             month is showing — do not hand-add .cal-cell divs here. -->
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="contact">
+  <div class="contact-wrap">
+
+    <!-- LEFT: text + contact cards -->
+    <div class="contact-left">
+      <span class="contact-badge">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z"/></svg>
+        LET'S CONNECT
+      </span>
+
+      <h2 class="contact-heading">GET IN<br><span>TOUCH</span></h2>
+
+      <p class="contact-sub">Have a question, proposal, or just want to say hello? We'd love to hear from you. Reach out to us through any of the channels below.</p>
+
+      <div class="contact-cards">
+        <a href="mailto:metafrenscommunity@gmail.com" class="contact-card">
+          <span class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+          </span>
+          <span class="contact-card-text">
+            <span class="contact-card-label">EMAIL US</span>
+            <span class="contact-card-value">metafrenscommunity@gmail.com</span>
+          </span>
+          <span class="contact-card-arrow">→</span>
+        </a>
+
+        <a href="https://x.com/Metafrens01" class="contact-card" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.6-6.9L4.2 22H1l8.1-9.3L.7 2h7.3l5 6.3L18.9 2z"/></svg>
+          </span>
+          <span class="contact-card-text">
+            <span class="contact-card-label">GENERAL INQUIRIES</span>
+            <span class="contact-card-value">METAFRENS</span>
+          </span>
+          <span class="contact-card-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT: illustration placeholder + socials -->
+    <div class="contact-right">
+      <img src="/assets/mascot-getintouch.png" class="contact-illustration" alt="Contact illustration">
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#home" class="logo">
+        <span class="logo-badge">
+          <img src="/assets/metafrens-logo-white.png" alt="MetaFrens Logo">
+        </span>
+        <span class="logo-text">METAFRENS</span>
+      </a>
+      <p>Building the future of on-chain community, one fren at a time.</p>
+    </div>
+
+    <div class="footer-links">
+      <h5>Quick Links</h5>
+      <a href="#home">Home</a>
+      <a href="#team">Team</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#events">Events</a>
+    </div>
+
+    <div class="footer-social">
+      <h5>Community</h5>
+      <div class="social-icons">
+        <a href="https://x.com/Metafrens01" aria-label="Twitter / X">𝕏</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 MetaFrens. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

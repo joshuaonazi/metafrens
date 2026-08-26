@@ -761,7 +761,7 @@ ul { list-style: none; }
 .cal-main { min-height: 100%; }
 
 .cal-side {
-  padding-top: 135px;
+  padding-top: 12px;
   max-height: none;
   overflow: visible;
   padding-right: 0;
@@ -987,10 +987,9 @@ ul { list-style: none; }
 }
 .cal-event-icon svg { width: 9px; height: 9px; }
 .cal-event-title {
-  font-size: .6rem;
+  font-size: .68rem;
   font-weight: 700;
   line-height: 1.15;
-  white-space: nowrap;
 }
 .cal-event-time {
   font-size: .55rem;
@@ -1210,7 +1209,7 @@ button:focus-visible {
   .team-grid { grid-template-columns: minmax(0, 1fr) minmax(180px, 1.1fr) minmax(0, 1fr); }
 
   .cal-wrap { grid-template-columns: 1fr; gap: 40px; }
-  .cal-side { max-width: 520px; padding-top: 0; }
+  .cal-side { max-width: 520px; }
   .cal-main { min-height: 0; }
 }
 
@@ -1331,15 +1330,8 @@ button:focus-visible {
   .cal-cell { border-radius: 8px; padding: 5px; }
   .cal-daynum { font-size: .65rem; }
   .cal-event { inset: 3px; padding: 4px; border-radius: 6px; gap: 2px; }
-  .cal-event-title {
-    width: 220%;
-    font-size: .55rem;
-    line-height: 1.15;
-    white-space: nowrap;
-    transform: scaleX(.45);
-    transform-origin: left center;
-  }
-  .cal-event-time { display: block; font-size: .42rem; line-height: 1; white-space: nowrap; }
+  .cal-event-title { font-size: .55rem; line-height: 1.15; }
+  .cal-event-time { display: none; } /* not enough room; title + dot is enough at this size */
   .cal-event-date { font-size: 0; }  /* hide text, keep the dot as a visual marker */
   .cal-dot { width: 4px; height: 4px; }
   .cal-event-icon { width: 14px; height: 14px; }

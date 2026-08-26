@@ -987,10 +987,9 @@ ul { list-style: none; }
 }
 .cal-event-icon svg { width: 9px; height: 9px; }
 .cal-event-title {
-  font-size: .6rem;
+  font-size: .68rem;
   font-weight: 700;
   line-height: 1.15;
-  white-space: nowrap;
 }
 .cal-event-time {
   font-size: .55rem;
@@ -1331,14 +1330,7 @@ button:focus-visible {
   .cal-cell { border-radius: 8px; padding: 5px; }
   .cal-daynum { font-size: .65rem; }
   .cal-event { inset: 3px; padding: 4px; border-radius: 6px; gap: 2px; }
-  .cal-event-title {
-    width: 220%;
-    font-size: .55rem;
-    line-height: 1.15;
-    white-space: nowrap;
-    transform: scaleX(.45);
-    transform-origin: left center;
-  }
+  .cal-event-title { font-size: .55rem; line-height: 1.15; }
   .cal-event-time { display: block; font-size: .42rem; line-height: 1; white-space: nowrap; }
   .cal-event-date { font-size: 0; }  /* hide text, keep the dot as a visual marker */
   .cal-dot { width: 4px; height: 4px; }
