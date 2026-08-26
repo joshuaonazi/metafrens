@@ -498,7 +498,7 @@ ul { list-style: none; }
    TESTIMONIALS
    ========================================= */
 .testimonials {
-  padding: 110px 32px 84px;
+  padding: 110px 32px 28px;
   background: var(--white);
   color: var(--bg-deep-2);
   text-align: center;
@@ -1300,7 +1300,7 @@ button:focus-visible {
   /* Team / Testimonials */
   .team, .testimonials { padding-left: 20px; padding-right: 20px; }
   .team { padding-top: 70px; padding-bottom: 70px; }
-  .testimonials { padding-top: 70px; padding-bottom: 72px; }
+  .testimonials { padding-top: 70px; padding-bottom: 24px; }
   .section-title { margin-bottom: 32px; }
   .founder-card { width: 170px; height: 170px; }
   .member-card img { width: 84px; height: 84px; }

@@ -498,7 +498,7 @@ ul { list-style: none; }
    TESTIMONIALS
    ========================================= */
 .testimonials {
-  padding: 110px 32px 84px;
+  padding: 110px 32px 28px;
   background: var(--white);
   color: var(--bg-deep-2);
   text-align: center;
@@ -758,7 +758,7 @@ ul { list-style: none; }
 .cal-main { min-height: 100%; }
 
 .cal-side {
-  padding-top: 12px;
+  padding-top: 6px;
   max-height: none;
   overflow: visible;
   padding-right: 0;
@@ -811,9 +811,6 @@ ul { list-style: none; }
   color: var(--white);
   margin-bottom: 12px;
   white-space: nowrap;
-}
-.cal-side .event-info-card:nth-of-type(2) .event-info-title {
-  margin-bottom: 16px;
 }
 .event-info-text {
   font-size: .86rem;
@@ -1300,7 +1297,7 @@ button:focus-visible {
   /* Team / Testimonials */
   .team, .testimonials { padding-left: 20px; padding-right: 20px; }
   .team { padding-top: 70px; padding-bottom: 70px; }
-  .testimonials { padding-top: 70px; padding-bottom: 72px; }
+  .testimonials { padding-top: 70px; padding-bottom: 24px; }
   .section-title { margin-bottom: 32px; }
   .founder-card { width: 170px; height: 170px; }
   .member-card img { width: 84px; height: 84px; }
