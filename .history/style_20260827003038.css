@@ -28,21 +28,6 @@
   --text-muted: #C9B9F5;   /* muted lavender for body copy on dark */
   --text-soft: #6C6690;    /* muted text on light sections */
 
-  /* --- Theme-invertible variables ---
-     These four are the ONLY variables that change between dark and
-     light mode (see [data-theme="light"] below). Everything else
-     above (brand-purple, brand-magenta, white, and the colorful
-     gradients used by the hero, team panels, and contact section)
-     stays constant in both themes on purpose — those sections are
-     already vividly colored and don't need inverting for contrast.
-     Use --bg-page / --bg-page-alt / --text-page / --text-page-muted
-     for any plain section background or body text that SHOULD flip
-     between themes (About, Events Calendar, Partners, Footer, nav). */
-  --bg-page: var(--bg-deep);
-  --bg-page-alt: var(--bg-deep-2);
-  --text-page: var(--white);
-  --text-page-muted: var(--text-muted);
-
   /* --- Typefaces --- */
   /* Chillax = requested primary (display / headings) */
   /* "Sans Uber" is a paid, non-CDN-hosted font (Azo Sans Uber by
@@ -56,26 +41,6 @@
   --font-body: 'Uber Sans', 'Switzer', sans-serif;
 
   --header-h: 84px;
-}
-
-/* =========================================
-   LIGHT MODE
-   Toggled by adding data-theme="light" to <html> (see script.js).
-   Only the four theme variables above change — brand colors and
-   the colorful gradient sections (hero, team, contact) stay the
-   same in both modes since they already have strong built-in
-   contrast and aren't meant to invert. */
-[data-theme="light"] {
-  --bg-page: #FFFFFF;
-  --bg-page-alt: #F1ECFB;
-  --text-page: #170F2E;
-  --text-page-muted: #6C6690;
-}
-
-/* Smooth crossfade when the theme is switched */
-body, .site-header, .about, .events-cal, .partners, .site-footer,
-.event-info-card, .about-card, .partner-card {
-  transition: background-color .35s ease, color .35s ease, border-color .35s ease;
 }
 
 /* Uncomment and point at your licensed font files to use the real
@@ -101,8 +66,8 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
-  background: var(--bg-page);
-  color: var(--text-page);
+  background: var(--bg-deep);
+  color: var(--white);
   overflow-x: hidden;
 }
 
@@ -142,7 +107,7 @@ ul { list-style: none; }
 }
 .site-header.scrolled {
   box-shadow: 0 4px 20px rgba(0,0,0,.35);
-  background: var(--bg-page-alt);
+  background: var(--bg-deep-2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -155,11 +120,6 @@ ul { list-style: none; }
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
-}
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 14px;
 }
 
 .logo { display: flex; align-items: center; }
@@ -189,14 +149,6 @@ ul { list-style: none; }
   border-radius: 2px;
 }
 
-/* Once scrolled, the header sits on a solid theme-aware background
-   instead of the hero's gradient, so nav text needs to follow the
-   theme here specifically — it stays white everywhere else since
-   it's floating over the hero's constant purple gradient. */
-[data-theme="light"] .site-header.scrolled .nav-link { color: var(--text-page-muted); }
-[data-theme="light"] .site-header.scrolled .nav-link:hover,
-[data-theme="light"] .site-header.scrolled .nav-link.active { color: var(--text-page); }
-
 .btn-register {
   display: inline-flex;
   align-items: center;
@@ -211,33 +163,6 @@ ul { list-style: none; }
   transition: background .25s, transform .25s;
 }
 .btn-register:hover { background: rgba(255,255,255,.28); transform: translateY(-2px); }
-
-.theme-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,.3);
-  background: rgba(255,255,255,.1);
-  color: var(--white);
-  cursor: pointer;
-  transition: background .25s, transform .25s;
-  flex-shrink: 0;
-}
-.theme-toggle:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
-.theme-toggle svg { display: block; }
-.theme-toggle .icon-moon { display: block; }
-.theme-toggle .icon-sun { display: none; }
-[data-theme="light"] .theme-toggle .icon-moon { display: none; }
-[data-theme="light"] .theme-toggle .icon-sun { display: block; }
-
-[data-theme="light"] .site-header.scrolled .theme-toggle {
-  border-color: rgba(23,15,46,.2);
-  background: rgba(23,15,46,.06);
-  color: var(--text-page);
-}
-[data-theme="light"] .site-header.scrolled .theme-toggle:hover { background: rgba(23,15,46,.12); }
 
 .menu-toggle {
   display: none;
@@ -349,7 +274,7 @@ ul { list-style: none; }
    ========================================= */
 .about {
   padding: 110px 40px;
-  background: var(--bg-page);
+  background: var(--bg-deep);
 }
 .about-wrap {
   max-width: 1400px;
@@ -374,7 +299,7 @@ ul { list-style: none; }
   font-weight: 700;
   font-size: clamp(2.2rem, 4.4vw, 3.4rem);
   line-height: .98;
-  color: var(--text-page);
+  color: var(--white);
   margin-bottom: 26px;
 }
 .about-heading span {
@@ -384,7 +309,7 @@ ul { list-style: none; }
   color: transparent;
 }
 .about-text {
-  color: var(--text-page-muted);
+  color: var(--text-muted);
   font-size: 1.02rem;
   line-height: 1.75;
   max-width: 480px;
@@ -408,7 +333,7 @@ ul { list-style: none; }
 }
 .stat-label {
   font-size: .8rem;
-  color: var(--text-page-muted);
+  color: var(--text-muted);
   letter-spacing: .3px;
 }
 
@@ -419,15 +344,15 @@ ul { list-style: none; }
   gap: 22px;
 }
 .about-card {
-  background: rgba(119,66,236,.04);
-  border: 1px solid rgba(119,66,236,.14);
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.1);
   border-radius: 18px;
   padding: 30px 26px;
   transition: border-color .25s, background .25s, transform .25s;
 }
 .about-card:hover {
   border-color: rgba(119,66,236,.5);
-  background: rgba(119,66,236,.09);
+  background: rgba(119,66,236,.06);
   transform: translateY(-4px);
 }
 .about-card-icon {
@@ -443,13 +368,13 @@ ul { list-style: none; }
 .about-card h4 {
   font-size: 1.05rem;
   font-weight: 600;
-  color: var(--text-page);
+  color: var(--white);
   margin-bottom: 10px;
 }
 .about-card p {
   font-size: .88rem;
   line-height: 1.6;
-  color: var(--text-page-muted);
+  color: var(--text-muted);
 }
 
 /* =========================================
@@ -638,20 +563,19 @@ ul { list-style: none; }
   padding: 100px 32px 90px;
   text-align: center;
   overflow: hidden;
-  background: var(--bg-page);
 }
 .partners-inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 2; }
 
 .partners-badge {
   display: inline-block;
-  border: 1px solid rgba(119,66,236,.25);
-  background: rgba(119,66,236,.06);
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.04);
   padding: 8px 20px;
   border-radius: 30px;
   font-size: .72rem;
   font-weight: 700;
   letter-spacing: 2px;
-  color: var(--text-page-muted);
+  color: var(--text-muted);
   margin-bottom: 26px;
 }
 
@@ -661,7 +585,7 @@ ul { list-style: none; }
   font-size: clamp(2.4rem, 6vw, 4.4rem);
   line-height: .95;
   letter-spacing: 0;
-  color: var(--text-page);
+  color: var(--white);
   margin-bottom: 22px;
 }
 .partners-heading span {
@@ -672,7 +596,7 @@ ul { list-style: none; }
 }
 
 .partners-sub {
-  color: var(--text-page-muted);
+  color: var(--text-muted);
   font-size: 1rem;
   line-height: 1.7;
   max-width: 560px;
@@ -686,7 +610,7 @@ ul { list-style: none; }
   gap: 16px;
   margin-bottom: 50px;
 }
-.divider-line { width: 60px; height: 1px; background: rgba(119,66,236,.25); }
+.divider-line { width: 60px; height: 1px; background: rgba(255,255,255,.2); }
 .divider-icon {
   width: 42px; height: 42px;
   border-radius: 50%;
@@ -709,8 +633,8 @@ ul { list-style: none; }
   position: relative;
   display: block;
   width: 260px;
-  background: rgba(119,66,236,.04);
-  border: 1px solid rgba(119,66,236,.14);
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.1);
   border-radius: 18px;
   padding: 18px;
   text-align: center;
@@ -718,7 +642,7 @@ ul { list-style: none; }
 }
 .partner-card:hover {
   border-color: rgba(119,66,236,.5);
-  background: rgba(119,66,236,.09);
+  background: rgba(119,66,236,.06);
   transform: translateY(-4px);
 }
 
@@ -726,7 +650,7 @@ ul { list-style: none; }
   width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 14px;
-  background: rgba(119,66,236,.08);
+  background: rgba(255,255,255,.06);
   overflow: hidden;
   margin-bottom: 18px;
 }
@@ -741,7 +665,7 @@ ul { list-style: none; }
 .partner-name {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text-page);
+  color: var(--white);
   margin-bottom: 6px;
 }
 .partner-label {
@@ -749,7 +673,7 @@ ul { list-style: none; }
   font-size: .7rem;
   font-weight: 700;
   letter-spacing: 1.5px;
-  color: var(--text-page-muted);
+  color: var(--text-muted);
 }
 
 .partner-x-badge {
@@ -793,7 +717,7 @@ ul { list-style: none; }
 }
 .cta-text { flex: 1; }
 .cta-text h4 { font-size: 1.02rem; font-weight: 600; margin-bottom: 4px; }
-.cta-text p { font-size: .88rem; color: var(--text-page-muted); }
+.cta-text p { font-size: .88rem; color: var(--text-muted); }
 .cta-btn {
   flex-shrink: 0;
   display: inline-flex;
@@ -815,8 +739,8 @@ ul { list-style: none; }
    (replaces the old 3-card .events section)
    ========================================= */
 .events-cal {
-  background: var(--bg-page);
-  color: var(--text-page);
+  background: var(--bg-deep);
+  color: var(--white);
   padding: 50px 40px;
 }
 .cal-wrap {
@@ -843,8 +767,8 @@ ul { list-style: none; }
 
 .event-info-card {
   width: 100%;
-  background: rgba(119,66,236,.05);
-  border: 1px solid rgba(119,66,236,.16);
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.1);
   border-radius: 14px;
   padding: 18px 18px;
   margin-bottom: 14px;
@@ -854,7 +778,7 @@ ul { list-style: none; }
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.15rem;
-  color: var(--text-page);
+  color: var(--white);
   margin-bottom: 12px;
   white-space: nowrap;
 }
@@ -864,7 +788,7 @@ ul { list-style: none; }
 .event-info-text {
   font-size: .86rem;
   line-height: 1.65;
-  color: var(--text-page-muted);
+  color: var(--text-muted);
   margin-bottom: 10px;
   overflow-wrap: anywhere;
 }
@@ -891,7 +815,7 @@ ul { list-style: none; }
   margin-bottom: 18px;
 }
 .cal-eyebrow span {
-  color: var(--text-page)
+  color: var(--white)
 }
 .cal-heading {
   font-family: var(--font-display);
@@ -899,7 +823,7 @@ ul { list-style: none; }
   font-size: clamp(2.6rem, 4.2vw, 3.6rem);
   line-height: .95;
   letter-spacing: -.5px;
-  color: var(--text-page);
+  color: var(--white);
   margin-bottom: 26px;
 }
 .cal-heading span {
@@ -910,7 +834,7 @@ ul { list-style: none; }
   color: transparent;
 }
 .cal-desc {
-  color: var(--text-page-muted);
+  color: var(--text-muted);
   font-size: .98rem;
   line-height: 1.7;
   max-width: 300px;
@@ -929,7 +853,7 @@ ul { list-style: none; }
 .cal-nav-btn {
   width: 34px; height: 34px;
   border-radius: 50%;
-  border: 1px solid rgba(119,66,236,.3);
+  border: 1px solid rgba(255,255,255,.2);
   background: transparent;
   color: var(--brand-purple);
   font-size: 1.1rem;
@@ -944,15 +868,14 @@ ul { list-style: none; }
   font-size: 1.7rem;
   min-width: 220px;
   text-align: center;
-  color: var(--text-page);
 }
 .cal-add-btn {
   display: flex;
   align-items: center;
   gap: 10px;
   background: transparent;
-  border: 1px solid rgba(119,66,236,.3);
-  color: var(--text-page);
+  border: 1px solid rgba(255,255,255,.25);
+  color: var(--white);
   padding: 13px 20px;
   border-radius: 12px;
   font-size: .8rem;
@@ -961,7 +884,7 @@ ul { list-style: none; }
   cursor: pointer;
   transition: background .2s, border-color .2s;
 }
-.cal-add-btn:hover { background: rgba(119,66,236,.08); border-color: var(--brand-purple); }
+.cal-add-btn:hover { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.5); }
 
 .cal-grid {
   display: grid;
@@ -972,8 +895,8 @@ ul { list-style: none; }
 .cal-cell {
   position: relative;
   aspect-ratio: 1 / 0.6;
-  background: rgba(119,66,236,.04);
-  border: 1px solid rgba(119,66,236,.12);
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.06);
   border-radius: 9px;
   padding: 7px;
 }
@@ -981,13 +904,13 @@ ul { list-style: none; }
   font-size: .78rem;
   font-weight: 700;
   letter-spacing: 1px;
-  color: var(--text-page-muted);
+  color: var(--text-muted);
   padding-bottom: 10px;
 }
 .cal-daynum {
   font-size: .75rem;
   font-weight: 600;
-  color: var(--text-page-muted);
+  color: var(--text-muted);
 }
 .cal-cell:has(.cal-event) .cal-daynum { display: none; }
 
@@ -1171,7 +1094,7 @@ ul { list-style: none; }
    ========================================= */
 
 .site-footer {
-  background: var(--bg-page-alt);
+  background: var(--bg-deep-2);
   padding: 70px 32px 0;
 }
 .footer-inner {
@@ -1181,11 +1104,11 @@ ul { list-style: none; }
   grid-template-columns: 2fr 1fr 1fr;
   gap: 40px;
   padding-bottom: 50px;
-  border-bottom: 1px solid rgba(119,66,236,.18);
+  border-bottom: 1px solid rgba(255,255,255,.1);
 }
 .footer-brand p {
   margin-top: 16px;
-  color: var(--text-page-muted);
+  color: var(--text-muted);
   font-size: .9rem;
   max-width: 320px;
   line-height: 1.6;
@@ -1197,26 +1120,25 @@ ul { list-style: none; }
   font-size: .85rem;
   letter-spacing: 1px;
   margin-bottom: 18px;
-  color: var(--text-page);
+  color: var(--white);
 }
 .footer-links a {
   display: block;
   margin-bottom: 12px;
-  color: var(--text-page-muted);
+  color: var(--text-muted);
   font-size: .92rem;
   transition: color .2s;
 }
-.footer-links a:hover { color: var(--text-page); }
+.footer-links a:hover { color: var(--white); }
 .social-icons { display: flex; gap: 14px; }
 .social-icons a {
   width: 42px; height: 42px;
   border-radius: 50%;
-  border: 1px solid rgba(119,66,236,.3);
-  color: var(--text-page);
+  border: 1px solid rgba(255,255,255,.25);
   display: flex; align-items: center; justify-content: center;
   transition: background .2s, border-color .2s;
 }
-.social-icons a:hover { background: var(--brand-magenta); border-color: var(--brand-magenta); color: var(--white); }
+.social-icons a:hover { background: var(--brand-magenta); border-color: var(--brand-magenta); }
 
 .footer-bottom {
   max-width: 1300px;
@@ -1224,7 +1146,7 @@ ul { list-style: none; }
   padding: 24px 0;
   text-align: center;
   font-size: .82rem;
-  color: var(--text-page-muted);
+  color: var(--text-muted);
 }
 
 /* =========================================
@@ -1277,7 +1199,6 @@ button:focus-visible {
   .main-nav { display: none; }
   .btn-register { display: none; }
   .menu-toggle { display: flex; }
-  .theme-toggle { width: 36px; height: 36px; margin-right: 4px; }
   .main-nav.open {
     display: flex;
     flex-direction: column;

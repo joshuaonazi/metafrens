@@ -1191,6 +1191,8 @@ ul { list-style: none; }
   line-height: 1.6;
 }
 .footer-brand .logo-badge img { height: 50px; width: auto; }
+[data-theme="light"] .footer-brand .logo-badge img { filter: brightness(0); }
+[data-theme="light"] .site-header.scrolled .logo-img { filter: brightness(0); }
 .footer-links h5, .footer-social h5 {
   font-family: var(--font-display);
   font-weight: 600;

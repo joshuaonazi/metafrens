@@ -10,22 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('section[id]');
 
-  // --- Dark / light theme toggle ---
-  // Initial theme (on page load) is set synchronously in <head> to avoid
-  // a flash of the wrong theme — this just handles clicking the toggle.
-  const themeToggle = document.getElementById('themeToggle');
-
-  themeToggle?.addEventListener('click', () => {
-    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    if (isLight) {
-      document.documentElement.removeAttribute('data-theme');
-      localStorage.setItem('metafrens-theme', 'dark');
-    } else {
-      document.documentElement.setAttribute('data-theme', 'light');
-      localStorage.setItem('metafrens-theme', 'light');
-    }
-  });
-
   // --- Header shadow on scroll ---
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 20);
