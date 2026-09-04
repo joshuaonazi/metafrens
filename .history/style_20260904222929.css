@@ -1062,30 +1062,6 @@ ul { list-style: none; }
 /* =========================================
    RESOURCES
    ========================================= */
-.resources {
-  padding: 80px 40px;
-  background: var(--bg-page);
-}
-.resources-heading {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
-  color: var(--text-page);
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.resources-scroll {
-  max-width: 900px;
-  margin: 0 auto;
-  height: 500px;
-  overflow-y: scroll;
-  padding-right: 4px;
-  scrollbar-width: none;      /* Firefox */
-  -ms-overflow-style: none;   /* old Edge/IE */
-}
-.resources-scroll::-webkit-scrollbar { display: none; } /* Chrome/Safari */
-
 .resource-item {
   border-bottom: 1px solid rgba(119,66,236,.15);
   padding: 24px 8px;

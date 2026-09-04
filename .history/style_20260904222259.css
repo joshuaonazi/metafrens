@@ -1062,44 +1062,27 @@ ul { list-style: none; }
 /* =========================================
    RESOURCES
    ========================================= */
-.resources {
-  padding: 80px 40px;
-  background: var(--bg-page);
+.resource-card {
+  background: rgba(119,66,236,.04);
+  border: 1px solid rgba(119,66,236,.14);
+  border-radius: 16px;
+  padding: 24px 22px;
+  margin-bottom: 16px;
+  transition: border-color .25s, background .25s;
 }
-.resources-heading {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
-  color: var(--text-page);
-  text-align: center;
-  margin-bottom: 40px;
+.resource-card:last-child { margin-bottom: 0; }
+.resource-card:hover {
+  border-color: rgba(119,66,236,.4);
+  background: rgba(119,66,236,.07);
 }
 
-.resources-scroll {
-  max-width: 900px;
-  margin: 0 auto;
-  height: 500px;
-  overflow-y: scroll;
-  padding-right: 4px;
-  scrollbar-width: none;      /* Firefox */
-  -ms-overflow-style: none;   /* old Edge/IE */
-}
-.resources-scroll::-webkit-scrollbar { display: none; } /* Chrome/Safari */
-
-.resource-item {
-  border-bottom: 1px solid rgba(119,66,236,.15);
-  padding: 24px 8px;
-}
-.resource-item:first-child { padding-top: 0; }
-.resource-item:last-child { border-bottom: none; }
-
-.resource-item h4 {
+.resource-card h4 {
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--text-page);
   margin-bottom: 10px;
 }
-.resource-item p {
+.resource-card p {
   font-size: .92rem;
   line-height: 1.65;
   color: var(--text-page-muted);
