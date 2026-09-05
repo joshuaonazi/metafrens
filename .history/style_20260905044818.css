@@ -1069,10 +1069,6 @@ ul { list-style: none; }
   padding: 80px 40px;
   background: var(--brand-purple);
 }
-[data-theme="light"] .resources {
-  background: #FFFFFF;
-}
-
 .resources-heading {
   font-family: var(--font-display);
   font-weight: 600;
@@ -1080,9 +1076,6 @@ ul { list-style: none; }
   color: var(--white);
   text-align: center;
   margin-bottom: 40px;
-}
-[data-theme="light"] .resources-heading {
-  color: var(--text-page);
 }
 
 .resources-scroll {
