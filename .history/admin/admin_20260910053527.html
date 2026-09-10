@@ -59,28 +59,16 @@
   select {
   appearance: none;
   -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23C9B9F5' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
   padding-right: 36px;
-  }
-  .field {
-    position: relative;
-  }
-  .field:has(select)::after {
-    content: '';
-    position: absolute;
-    right: 16px;
-    bottom: 18px;
-    width: 8px;
-    height: 8px;
-    border-right: 2px solid var(--text-muted);
-    border-bottom: 2px solid var(--text-muted);
-    transform: rotate(45deg);
-    pointer-events: none;
-  }
-  select option {
-    background: var(--bg-deep-2);
-    color: var(--white);
-  }
-  
+}
+select option {
+  background: var(--bg-deep-2);
+  color: var(--white);
+}
+
   input:focus, select:focus { outline: 2px solid var(--brand-purple); border-color: transparent; }
   button {
     cursor: pointer;

@@ -60,26 +60,26 @@
   appearance: none;
   -webkit-appearance: none;
   padding-right: 36px;
-  }
-  .field {
-    position: relative;
-  }
-  .field:has(select)::after {
-    content: '';
-    position: absolute;
-    right: 16px;
-    bottom: 18px;
-    width: 8px;
-    height: 8px;
-    border-right: 2px solid var(--text-muted);
-    border-bottom: 2px solid var(--text-muted);
-    transform: rotate(45deg);
-    pointer-events: none;
-  }
-  select option {
-    background: var(--bg-deep-2);
-    color: var(--white);
-  }
+}
+.field {
+  position: relative;
+}
+.field:has(select)::after {
+  content: '';
+  position: absolute;
+  right: 16px;
+  bottom: 18px;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--text-muted);
+  border-bottom: 2px solid var(--text-muted);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+select option {
+  background: var(--bg-deep-2);
+  color: var(--white);
+}
   
   input:focus, select:focus { outline: 2px solid var(--brand-purple); border-color: transparent; }
   button {
