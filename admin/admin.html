@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>METAFRENS — Events Dashboard</title>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=chillax@400,500,600,700&f[]=switzer@400,500,600,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand-purple: #7742EC;
+    --brand-magenta: #9802D4;
+    --bg-deep: #0C0620;
+    --bg-deep-2: #150B36;
+    --white: #FFFFFF;
+    --text-muted: #C9B9F5;
+    --font-display: 'Chillax', sans-serif;
+    --font-body: 'Switzer', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--font-body);
+    background: var(--bg-deep);
+    color: var(--white);
+    min-height: 100vh;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 50px 24px 100px; }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+  .subtitle { color: var(--text-muted); font-size: .92rem; margin-bottom: 40px; }
+
+  /* --- Login screen --- */
+  #loginScreen {
+    max-width: 380px;
+    margin: 80px auto;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 16px;
+    padding: 32px;
+  }
+  #loginScreen h2 { font-family: var(--font-display); margin-bottom: 20px; font-size: 1.3rem; }
+  .field { margin-bottom: 16px; }
+  label { display: block; font-size: .8rem; color: var(--text-muted); margin-bottom: 6px; }
+  input, select {
+    width: 100%;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 8px;
+    padding: 11px 14px;
+    color: var(--white);
+    font-size: .92rem;
+    font-family: var(--font-body);
+  }
+  input:focus, select:focus { outline: 2px solid var(--brand-purple); border-color: transparent; }
+  button {
+    cursor: pointer;
+    border: none;
+    font-family: var(--font-body);
+  }
+  .btn-primary {
+    width: 100%;
+    background: linear-gradient(135deg, var(--brand-purple), var(--brand-magenta));
+    color: var(--white);
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: .92rem;
+  }
+  .error-msg { color: #ff6b8b; font-size: .82rem; margin-top: 10px; min-height: 1em; }
+
+  /* --- Dashboard --- */
+  #dashboard { display: none; }
+  .topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+  .user-email { font-size: .82rem; color: var(--text-muted); }
+  .btn-logout {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.2);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: .8rem;
+  }
+
+  .panel {
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 16px;
+    padding: 26px;
+    margin-bottom: 30px;
+  }
+  .panel h3 { font-family: var(--font-display); margin-bottom: 20px; font-size: 1.1rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-row .field { grid-column: span 1; }
+  .field.full { grid-column: 1 / -1; }
+
+  .status-msg { font-size: .85rem; margin-top: 12px; min-height: 1em; }
+  .status-msg.success { color: #4ade80; }
+  .status-msg.error { color: #ff6b8b; }
+
+  /* --- Events list --- */
+  .event-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  .event-row:last-child { border-bottom: none; }
+  .event-row-info { flex: 1; }
+  .event-row-date { font-size: .72rem; color: var(--brand-magenta); font-weight: 700; letter-spacing: .5px; }
+  .event-row-title { font-size: .96rem; font-weight: 600; margin: 3px 0; }
+  .event-row-time { font-size: .8rem; color: var(--text-muted); }
+  .btn-delete {
+    background: rgba(255,60,90,.12);
+    color: #ff6b8b;
+    border: 1px solid rgba(255,60,90,.3);
+    padding: 7px 14px;
+    border-radius: 16px;
+    font-size: .78rem;
+  }
+  .btn-delete:hover { background: rgba(255,60,90,.22); }
+  .empty-note { color: var(--text-muted); font-size: .88rem; padding: 10px 0; }
+
+  @media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <h1>METAFRENS Events Dashboard</h1>
+  <p class="subtitle">Add or remove one-off events — they'll show up on the site's calendar automatically, alongside the recurring Alpha Nights / Hangout schedule.</p>
+
+  <!-- ===== LOGIN ===== -->
+  <div id="loginScreen">
+    <h2>Team Login</h2>
+    <div class="field">
+      <label for="loginEmail">Email</label>
+      <input type="email" id="loginEmail" placeholder="you@metafrens.com" autocomplete="username">
+    </div>
+    <div class="field">
+      <label for="loginPassword">Password</label>
+      <input type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password">
+    </div>
+    <button class="btn-primary" id="loginBtn">Log In</button>
+    <p class="error-msg" id="loginError"></p>
+  </div>
+
+  <!-- ===== DASHBOARD ===== -->
+  <div id="dashboard">
+    <div class="topbar">
+      <span class="user-email" id="userEmail"></span>
+      <button class="btn-logout" id="logoutBtn">Log out</button>
+    </div>
+
+    <div class="panel">
+      <h3>Add an Event</h3>
+      <div class="form-row">
+        <div class="field">
+          <label for="eventDate">Date</label>
+          <input type="date" id="eventDate">
+        </div>
+        <div class="field">
+          <label for="eventTime">Time (as shown on site)</label>
+          <input type="text" id="eventTime" placeholder="e.g. 6:00 PM UTC">
+        </div>
+        <div class="field full">
+          <label for="eventTitle">Event Title</label>
+          <input type="text" id="eventTitle" placeholder="e.g. Special AMA with Guest Speaker">
+        </div>
+        <div class="field full">
+          <label for="eventIcon">Icon</label>
+          <select id="eventIcon">
+            <option value="0">Handshake / Community</option>
+            <option value="1">Globe / Workshop</option>
+            <option value="2">Mic / Talk</option>
+            <option value="3">Build / Code</option>
+            <option value="4">Star / Panel</option>
+            <option value="5">Chat / AMA</option>
+          </select>
+        </div>
+      </div>
+      <br>
+      <button class="btn-primary" id="addEventBtn" style="max-width:220px;">Add Event</button>
+      <p class="status-msg" id="addStatus"></p>
+    </div>
+
+    <div class="panel">
+      <h3>Upcoming Events</h3>
+      <div id="eventsList">
+        <p class="empty-note">Loading…</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Supabase SDK (client-side, no server needed) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+  // ===== PASTE YOUR SUPABASE PROJECT DETAILS HERE =====
+  const SUPABASE_URL = "https://xgodiozmztigjssltlnd.supabase.co";
+  const SUPABASE_ANON_KEY = "sb_publishable_pSz15pbT1--qwepB0u2TGA_ig2VZ2mX";
+  // ======================================================
+
+  const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  const loginScreen = document.getElementById('loginScreen');
+  const dashboard = document.getElementById('dashboard');
+  const loginBtn = document.getElementById('loginBtn');
+  const logoutBtn = document.getElementById('logoutBtn');
+  const loginError = document.getElementById('loginError');
+  const userEmail = document.getElementById('userEmail');
+
+  let eventsChannel = null;
+
+  loginBtn.addEventListener('click', async () => {
+    loginError.textContent = '';
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value;
+    const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+    if (error) {
+      loginError.textContent = 'Login failed — check your email and password.';
+    }
+  });
+
+  logoutBtn.addEventListener('click', async () => {
+    await supabaseClient.auth.signOut();
+  });
+
+  async function showDashboard(user) {
+    loginScreen.style.display = 'none';
+    dashboard.style.display = 'block';
+    userEmail.textContent = user.email;
+    await loadEvents();
+    if (!eventsChannel) {
+      eventsChannel = supabaseClient
+        .channel('events-changes')
+        .on('postgres_changes', { event: '*', schema: 'public', table: 'events' }, loadEvents)
+        .subscribe();
+    }
+  }
+
+  function showLogin() {
+    loginScreen.style.display = 'block';
+    dashboard.style.display = 'none';
+  }
+
+  // Check session on load, and react to login/logout
+  supabaseClient.auth.getSession().then(({ data: { session } }) => {
+    if (session?.user) showDashboard(session.user); else showLogin();
+  });
+  supabaseClient.auth.onAuthStateChange((_event, session) => {
+    if (session?.user) showDashboard(session.user); else showLogin();
+  });
+
+  // ===== Add event =====
+  const addEventBtn = document.getElementById('addEventBtn');
+  const addStatus = document.getElementById('addStatus');
+
+  addEventBtn.addEventListener('click', async () => {
+    const dateVal = document.getElementById('eventDate').value; // "YYYY-MM-DD"
+    const time = document.getElementById('eventTime').value.trim();
+    const title = document.getElementById('eventTitle').value.trim();
+    const icon = parseInt(document.getElementById('eventIcon').value, 10);
+
+    if (!dateVal || !time || !title) {
+      addStatus.textContent = 'Please fill in date, time, and title.';
+      addStatus.className = 'status-msg error';
+      return;
+    }
+
+    const [y, m, d] = dateVal.split('-').map(Number);
+    const dateKey = `${y}-${m}-${d}`;
+
+    const { data: { user } } = await supabaseClient.auth.getUser();
+    const { error } = await supabaseClient.from('events').insert({
+      date_key: dateKey, title, time, icon,
+      created_by: user.email
+    });
+
+    if (error) {
+      addStatus.textContent = 'Something went wrong — try again.';
+      addStatus.className = 'status-msg error';
+    } else {
+      addStatus.textContent = 'Event added!';
+      addStatus.className = 'status-msg success';
+      document.getElementById('eventDate').value = '';
+      document.getElementById('eventTime').value = '';
+      document.getElementById('eventTitle').value = '';
+      setTimeout(() => { addStatus.textContent = ''; }, 3000);
+    }
+  });
+
+  // ===== List + delete events =====
+  const eventsList = document.getElementById('eventsList');
+
+  async function loadEvents() {
+    const { data, error } = await supabaseClient
+      .from('events')
+      .select('*')
+      .order('date_key', { ascending: true });
+
+    if (error || !data || data.length === 0) {
+      eventsList.innerHTML = '<p class="empty-note">No one-off events added yet.</p>';
+      return;
+    }
+
+    eventsList.innerHTML = '';
+    data.forEach((ev) => {
+      const row = document.createElement('div');
+      row.className = 'event-row';
+      row.innerHTML = `
+        <div class="event-row-info">
+          <div class="event-row-date">${ev.date_key}</div>
+          <div class="event-row-title">${ev.title}</div>
+          <div class="event-row-time">${ev.time}</div>
+        </div>
+        <button class="btn-delete" data-id="${ev.id}">Delete</button>
+      `;
+      row.querySelector('.btn-delete').addEventListener('click', async () => {
+        await supabaseClient.from('events').delete().eq('id', ev.id);
+      });
+      eventsList.appendChild(row);
+    });
+  }
+</script>
+</html>

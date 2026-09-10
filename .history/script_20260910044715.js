@@ -195,8 +195,8 @@ document.addEventListener('DOMContentLoaded', () => {
   (async () => {
     try {
       // ===== Must match the values in admin.html exactly =====
-      const SUPABASE_URL = "https://xgodiozmztigjssltlnd.supabase.co";
-      const SUPABASE_ANON_KEY = "sb_publishable_pSz15pbT1--qwepB0u2TGA_ig2VZ2mX";
+      const SUPABASE_URL = "YOUR_PROJECT_URL";
+      const SUPABASE_ANON_KEY = "YOUR_ANON_PUBLIC_KEY";
       // =========================================================
 
       await new Promise((resolve, reject) => {

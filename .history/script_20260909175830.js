@@ -189,16 +189,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   buildCalendar(calDate);
 
-    // --- Pull one-off events added via the team dashboard (admin.html) ---
+  // --- Pull one-off events added via the team dashboard (admin.html) ---
   // Read-only here: this site only READS from Supabase, never writes.
   // Requires the same Supabase project/keys as admin.html.
   (async () => {
     try {
       // ===== Must match the values in admin.html exactly =====
-      const SUPABASE_URL = "https://xgodiozmztigjssltlnd.supabase.co";
-      const SUPABASE_ANON_KEY = "sb_publishable_pSz15pbT1--qwepB0u2TGA_ig2VZ2mX";
+      const SUPABASE_URL = "YOUR_PROJECT_URL"; // e.g. https://abcxyz.supabase.co
+      const SUPABASE_ANON_KEY = "YOUR_ANON_PUBLIC_KEY";
       // =========================================================
 
+      // Load the Supabase client library, then connect
       await new Promise((resolve, reject) => {
         const script = document.createElement('script');
         script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
@@ -207,11 +208,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.head.appendChild(script);
       });
 
-      const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
       async function refreshEvents() {
-        const { data, error } = await supabaseClient.from('events').select('*');
+        const { data, error } = await supabase.from('events').select('*');
         if (error) return;
+        // Reset and repopulate from scratch each time so deletions
+        // made in the dashboard disappear from the site too.
         Object.keys(specialEvents).forEach(key => delete specialEvents[key]);
         (data || []).forEach((ev) => {
           specialEvents[ev.date_key] = { title: ev.title, time: ev.time, icon: ev.icon };
@@ -221,12 +224,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       await refreshEvents();
 
-      supabaseClient
+      // Live updates: re-fetch whenever the events table changes
+      supabase
         .channel('public-events-changes')
         .on('postgres_changes', { event: '*', schema: 'public', table: 'events' }, refreshEvents)
         .subscribe();
 
     } catch (err) {
+      // If Supabase isn't configured yet, the calendar still works
+      // fine with just the recurring Alpha Nights / Hangout schedule.
       console.warn('Dashboard events unavailable:', err.message);
     }
   })();
