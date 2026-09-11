@@ -250,13 +250,16 @@
   const ALLOWED_EMAILS = ['joshuaonazi@gmail.com', 'jojoweb3333@gmail.com', 'sugargirlsats@gmail.com'];
 
   googleLoginBtn.addEventListener('click', async () => {
+  console.log('BUTTON CLICKED'); // TEMP DEBUG
   loginError.textContent = '';
-  const { error } = await supabaseClient.auth.signInWithOAuth({
-    provider: 'google',
-    options: { redirectTo: window.location.href }
-  });
-  if (error) {
-    loginError.textContent = 'Sign-in failed. Please try again.';
+  try {
+    const { data, error } = await supabaseClient.auth.signInWithOAuth({
+      provider: 'google',
+      options: { redirectTo: window.location.href }
+    });
+    console.log('signInWithOAuth result:', data, error); // TEMP DEBUG
+  } catch (err) {
+    console.error('signInWithOAuth threw:', err); // TEMP DEBUG
   }
 });
 
