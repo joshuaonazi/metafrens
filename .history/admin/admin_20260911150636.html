@@ -238,23 +238,21 @@
 
   const loginScreen = document.getElementById('loginScreen');
   const dashboard = document.getElementById('dashboard');
-  const loginBtn = document.getElementById('googleLoginBtn');
+  const loginBtn = document.getElementById('loginBtn');
   const logoutBtn = document.getElementById('logoutBtn');
   const loginError = document.getElementById('loginError');
   const userEmail = document.getElementById('userEmail');
 
   let eventsChannel = null;
 
-    // Keep this list in sync with the SQL policies (Step 3) — it's a
-  // convenience check for the UI; the real enforcement is in Supabase.
-  const ALLOWED_EMAILS = ['you@gmail.com', 'teammate@gmail.com'];
-
-  googleLoginBtn.addEventListener('click', async () => {
+  loginBtn.addEventListener('click', async () => {
     loginError.textContent = '';
-    await supabaseClient.auth.signInWithOAuth({
-      provider: 'google',
-      options: { redirectTo: window.location.href }
-    });
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value;
+    const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+    if (error) {
+      loginError.textContent = 'Login failed — check your email and password.';
+    }
   });
 
   logoutBtn.addEventListener('click', async () => {
@@ -262,16 +260,17 @@
   });
 
   async function showDashboard(user) {
-  if (!ALLOWED_EMAILS.includes(user.email)) {
-    await supabaseClient.auth.signOut();
-    loginError.textContent = `${user.email} isn't authorized for this dashboard.`;
-    return;
+    loginScreen.style.display = 'none';
+    dashboard.style.display = 'block';
+    userEmail.textContent = user.email;
+    await loadEvents();
+    if (!eventsChannel) {
+      eventsChannel = supabaseClient
+        .channel('events-changes')
+        .on('postgres_changes', { event: '*', schema: 'public', table: 'events' }, loadEvents)
+        .subscribe();
+    }
   }
-  loginScreen.style.display = 'none';
-  dashboard.style.display = 'block';
-  userEmail.textContent = user.email;
-  await loadEvents();
-  ...
 
   function showLogin() {
     loginScreen.style.display = 'block';

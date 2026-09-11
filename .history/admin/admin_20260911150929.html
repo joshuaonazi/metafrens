@@ -262,16 +262,17 @@
   });
 
   async function showDashboard(user) {
-  if (!ALLOWED_EMAILS.includes(user.email)) {
-    await supabaseClient.auth.signOut();
-    loginError.textContent = `${user.email} isn't authorized for this dashboard.`;
-    return;
+    loginScreen.style.display = 'none';
+    dashboard.style.display = 'block';
+    userEmail.textContent = user.email;
+    await loadEvents();
+    if (!eventsChannel) {
+      eventsChannel = supabaseClient
+        .channel('events-changes')
+        .on('postgres_changes', { event: '*', schema: 'public', table: 'events' }, loadEvents)
+        .subscribe();
+    }
   }
-  loginScreen.style.display = 'none';
-  dashboard.style.display = 'block';
-  userEmail.textContent = user.email;
-  await loadEvents();
-  ...
 
   function showLogin() {
     loginScreen.style.display = 'block';
