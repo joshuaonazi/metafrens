@@ -227,8 +227,7 @@
 </div>
 
 <!-- Supabase SDK (client-side, no server needed) -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js">
   // ===== PASTE YOUR SUPABASE PROJECT DETAILS HERE =====
   const SUPABASE_URL = "https://xgodiozmztigjssltlnd.supabase.co";
   const SUPABASE_ANON_KEY = "sb_publishable_pSz15pbT1--qwepB0u2TGA_ig2VZ2mX";
@@ -271,7 +270,7 @@
   dashboard.style.display = 'block';
   userEmail.textContent = user.email;
   await loadEvents();
-  }
+  
 
   function showLogin() {
     loginScreen.style.display = 'block';
@@ -356,5 +355,5 @@
       eventsList.appendChild(row);
     });
   }
-</script>
+
 </html>
