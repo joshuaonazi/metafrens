@@ -963,7 +963,7 @@ ul { list-style: none; }
   text-align: center;
   color: var(--text-page);
 }
-/* .cal-add-btn {
+.cal-add-btn {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -978,7 +978,7 @@ ul { list-style: none; }
   cursor: pointer;
   transition: background .2s, border-color .2s;
 }
-.cal-add-btn:hover { background: rgba(119,66,236,.08); border-color: var(--brand-purple); } */
+.cal-add-btn:hover { background: rgba(119,66,236,.08); border-color: var(--brand-purple); }
 
 .cal-grid {
   display: grid;
