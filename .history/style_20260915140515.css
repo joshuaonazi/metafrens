@@ -447,8 +447,8 @@ ul { list-style: none; }
   text-align: right;
 }
 
-.about-right-heading span {
-  color: var(--brand-purple);
+.about-right-heading > span {
+  color:      var(--brand-purple);
 }
 
 .about-card {

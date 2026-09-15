@@ -447,10 +447,6 @@ ul { list-style: none; }
   text-align: right;
 }
 
-.about-right-heading span {
-  color: var(--brand-purple);
-}
-
 .about-card {
   background: rgba(119,66,236,.04);
   border: 1px solid rgba(119,66,236,.14);
