@@ -127,18 +127,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const dayOfWeek = new Date(year, month, day).getDay(); // 0=Sun..6=Sat
       const recurringStart = new Date(Date.UTC(year, month, day, 20, 0)); // 8:00 PM UTC
-      const metafrensXLink = 'https://x.com/Metafrens01';
-
       if (dayOfWeek === 5) {
-        return { title: 'Alpha Nights', time: '8:00 PM UTC', icon: 4, startUTC: recurringStart, durationMinutes: 60, link: metafrensXLink };
+        return { title: 'Alpha Nights', time: '8:00 PM UTC', icon: 4, startUTC: recurringStart, durationMinutes: 60 };
       }
       if (dayOfWeek === 0) {
-        return { title: 'Metafrens Hangout', time: '8:00 PM UTC', icon: 5, startUTC: recurringStart, durationMinutes: 60, link: metafrensXLink };
+        return { title: 'Metafrens Hangout', time: '8:00 PM UTC', icon: 5, startUTC: recurringStart, durationMinutes: 60 };
       }
       return null;
-    }
-    
-    function getEventFor(year, month, day) {
+    }function getEventFor(year, month, day) {
       const key = `${year}-${month + 1}-${day}`;
       if (specialEvents[key]) return specialEvents[key];
 

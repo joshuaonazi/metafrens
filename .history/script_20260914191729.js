@@ -92,26 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
     '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>'
   ];
 
-  // ICS Generator + Add to Calendar on each event box
-  function makeICSDownloadUrl(ev) {
-    const fmt = (d) => d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-    const end = new Date(ev.startUTC.getTime() + ev.durationMinutes * 60000);
-    const ics = [
-      'BEGIN:VCALENDAR',
-      'VERSION:2.0',
-      'BEGIN:VEVENT',
-      `UID:${ev.title.replace(/\s+/g, '-')}-${fmt(ev.startUTC)}@metafrens`,
-      `DTSTAMP:${fmt(new Date())}`,
-      `DTSTART:${fmt(ev.startUTC)}`,
-      `DTEND:${fmt(end)}`,
-      `SUMMARY:${ev.title}`,
-      ev.link ? `URL:${ev.link}` : '',
-      'END:VEVENT',
-      'END:VCALENDAR'
-    ].filter(Boolean).join('\r\n');
-    return 'data:text/calendar;charset=utf8,' + encodeURIComponent(ics);
-  }
-
   // --- Recurring weekly events ---
   // Alpha Nights = every Friday, Metafrens Hangout = every Sunday.
   // These repeat automatically in every month, forever — no per-date
@@ -122,36 +102,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const specialEvents = {};
 
   function getEventFor(year, month, day) {
-      const key = `${year}-${month + 1}-${day}`;
-      if (specialEvents[key]) return specialEvents[key];
+    const key = `${year}-${month + 1}-${day}`;
+    if (specialEvents[key]) return specialEvents[key];
 
-      const dayOfWeek = new Date(year, month, day).getDay(); // 0=Sun..6=Sat
-      const recurringStart = new Date(Date.UTC(year, month, day, 20, 0)); // 8:00 PM UTC
-      const metafrensXLink = 'https://x.com/Metafrens01';
-
-      if (dayOfWeek === 5) {
-        return { title: 'Alpha Nights', time: '8:00 PM UTC', icon: 4, startUTC: recurringStart, durationMinutes: 60, link: metafrensXLink };
-      }
-      if (dayOfWeek === 0) {
-        return { title: 'Metafrens Hangout', time: '8:00 PM UTC', icon: 5, startUTC: recurringStart, durationMinutes: 60, link: metafrensXLink };
-      }
-      return null;
-    }
-    
-    function getEventFor(year, month, day) {
-      const key = `${year}-${month + 1}-${day}`;
-      if (specialEvents[key]) return specialEvents[key];
-
-      const dayOfWeek = new Date(year, month, day).getDay(); // 0=Sun..6=Sat
-      const recurringStart = new Date(Date.UTC(year, month, day, 20, 0)); // 8:00 PM UTC
-      if (dayOfWeek === 5) {
-        return { title: 'Alpha Nights', time: '8:00 PM UTC', icon: 4, startUTC: recurringStart, durationMinutes: 60 };
-      }
-      if (dayOfWeek === 0) {
-        return { title: 'Metafrens Hangout', time: '8:00 PM UTC', icon: 5, startUTC: recurringStart, durationMinutes: 60 };
-      }
-      return null;
-    }
+    const dayOfWeek = new Date(year, month, day).getDay(); // 0=Sun..6=Sat
+    if (dayOfWeek === 5) return { title: 'Alpha Night', time: '8:00 PM UTC', icon: 4 };
+    if (dayOfWeek === 0) return { title: 'Metafrens Hangout', time: '8:00 PM UTC', icon: 5 };
+    return null;
+  }
 
   let calDate = new Date();
   calDate.setDate(1); // normalize to the 1st, so month navigation doesn't skip months
@@ -192,11 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const shortMonth = monthNames[month].slice(0, 3);
         const eventEl = document.createElement('div');
         eventEl.className = 'cal-event';
-        const addToCalHtml = eventData.startUTC ? `
-          <a class="cal-event-add" href="${makeICSDownloadUrl(eventData)}" download="${eventData.title.replace(/\s+/g,'-')}.ics" onclick="event.stopPropagation()" title="Add to calendar">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 2v4M16 2v4M12 11v6M9 14h6"/></svg>
-          </a>` : '';
-
         eventEl.innerHTML = `
           <div class="cal-event-top">
             <span class="cal-event-date"><i class="cal-dot"></i>${day} ${shortMonth}</span>
@@ -205,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </span>
           </div>
           <p class="cal-event-title">${eventData.title}</p>
-          <p class="cal-event-time">${eventData.time}${addToCalHtml}</p>
+          <p class="cal-event-time">${eventData.time}</p>
         `;
         cell.appendChild(eventEl);
       }
@@ -262,18 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (error) return;
         Object.keys(specialEvents).forEach(key => delete specialEvents[key]);
         (data || []).forEach((ev) => {
-          const startDate = new Date(ev.start_utc);
-          const timeLabel = startDate.toLocaleTimeString('en-US', {
-            hour: 'numeric', minute: '2-digit', timeZone: 'UTC'
-          }) + ' UTC';
-          specialEvents[ev.date_key] = {
-            title: ev.title,
-            time: timeLabel,
-            icon: ev.icon,
-            link: ev.link,
-            startUTC: startDate,
-            durationMinutes: ev.duration_minutes
-          };
+          specialEvents[ev.date_key] = { title: ev.title, time: ev.time, icon: ev.icon };
         });
         buildCalendar(calDate);
       }

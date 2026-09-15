@@ -367,7 +367,6 @@ addEventBtn.addEventListener('click', async () => {
     addStatus.textContent = editingId ? 'Event updated!' : 'Event added!';
     addStatus.className = 'status-msg success';
     resetForm();
-    await loadEvents();
     setTimeout(() => { addStatus.textContent = ''; }, 3000);
   }
 });
@@ -422,7 +421,6 @@ async function loadEvents() {
     row.querySelector('.btn-delete').addEventListener('click', async () => {
       if (editingId === ev.id) resetForm();
       await supabaseClient.from('events').delete().eq('id', ev.id);
-      await loadEvents();
     });
     eventsList.appendChild(row);
   });

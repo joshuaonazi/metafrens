@@ -205,10 +205,6 @@
           <input type="text" id="eventTitle" placeholder="e.g. Special AMA with Guest Speaker">
         </div>
         <div class="field full">
-          <label for="eventLink">Link to X Space (optional)</label>
-          <input type="url" id="eventLink" placeholder="https://x.com/i/spaces/...">
-        </div>
-        <div class="field full">
           <label for="eventIcon">Icon</label>
           <select id="eventIcon">
             <option value="0">Handshake / Community</option>
@@ -221,10 +217,7 @@
         </div>
       </div>
       <br>
-      <div style="display:flex; gap:10px;">
-        <button class="btn-primary" id="addEventBtn" style="max-width:220px;">Add Event</button>
-        <button class="btn-logout" id="cancelEditBtn" style="display:none;">Cancel Edit</button>
-      </div>
+      <button class="btn-primary" id="addEventBtn" style="max-width:220px;">Add Event</button>
       <p class="status-msg" id="addStatus"></p>
     </div>
 
@@ -300,132 +293,75 @@
     if (session?.user) showDashboard(session.user); else showLogin();
   });
 
-  // ===== Add / Edit event =====
-const addEventBtn = document.getElementById('addEventBtn');
-const cancelEditBtn = document.getElementById('cancelEditBtn');
-const addStatus = document.getElementById('addStatus');
-const formHeading = document.getElementById('formHeading');
-let editingId = null;
+  // ===== Add event =====
+  const addEventBtn = document.getElementById('addEventBtn');
+  const addStatus = document.getElementById('addStatus');
 
-function resetForm() {
-  editingId = null;
-  formHeading.textContent = 'Add an Event';
-  addEventBtn.textContent = 'Add Event';
-  cancelEditBtn.style.display = 'none';
-  document.getElementById('eventDate').value = '';
-  document.getElementById('eventStartTime').value = '';
-  document.getElementById('eventDuration').value = '60';
-  document.getElementById('eventTitle').value = '';
-  document.getElementById('eventLink').value = '';
-  document.getElementById('eventIcon').value = '0';
-}
+  addEventBtn.addEventListener('click', async () => {
+    const dateVal = document.getElementById('eventDate').value; // "YYYY-MM-DD"
+    const time = document.getElementById('eventTime').value.trim();
+    const title = document.getElementById('eventTitle').value.trim();
+    const icon = parseInt(document.getElementById('eventIcon').value, 10);
 
-cancelEditBtn.addEventListener('click', resetForm);
+    if (!dateVal || !time || !title) {
+      addStatus.textContent = 'Please fill in date, time, and title.';
+      addStatus.className = 'status-msg error';
+      return;
+    }
 
-addEventBtn.addEventListener('click', async () => {
-  const dateVal = document.getElementById('eventDate').value;       // "YYYY-MM-DD"
-  const timeVal = document.getElementById('eventStartTime').value;  // "HH:MM"
-  const duration = parseInt(document.getElementById('eventDuration').value, 10) || 60;
-  const title = document.getElementById('eventTitle').value.trim();
-  const link = document.getElementById('eventLink').value.trim();
-  const icon = parseInt(document.getElementById('eventIcon').value, 10);
+    const [y, m, d] = dateVal.split('-').map(Number);
+    const dateKey = `${y}-${m}-${d}`;
 
-  if (!dateVal || !timeVal || !title) {
-    addStatus.textContent = 'Please fill in date, start time, and title.';
-    addStatus.className = 'status-msg error';
-    return;
-  }
-
-  // Build the UTC timestamp explicitly (the admin enters the time AS UTC,
-  // so we append "Z" rather than letting the browser guess a timezone)
-  const startUtcIso = `${dateVal}T${timeVal}:00Z`;
-  const [y, m, d] = dateVal.split('-').map(Number);
-  const dateKey = `${y}-${m}-${d}`;
-
-  const payload = {
-    date_key: dateKey,
-    title,
-    icon,
-    link: link || null,
-    start_utc: startUtcIso,
-    duration_minutes: duration
-  };
-
-  let error;
-  if (editingId) {
-    ({ error } = await supabaseClient.from('events').update(payload).eq('id', editingId));
-  } else {
     const { data: { user } } = await supabaseClient.auth.getUser();
-    payload.created_by = user.email;
-    ({ error } = await supabaseClient.from('events').insert(payload));
-  }
-
-  if (error) {
-    addStatus.textContent = 'Something went wrong — try again.';
-    addStatus.className = 'status-msg error';
-  } else {
-    addStatus.textContent = editingId ? 'Event updated!' : 'Event added!';
-    addStatus.className = 'status-msg success';
-    resetForm();
-    await loadEvents();
-    setTimeout(() => { addStatus.textContent = ''; }, 3000);
-  }
-});
-
-// ===== List + edit + delete events =====
-const eventsList = document.getElementById('eventsList');
-
-async function loadEvents() {
-  const { data, error } = await supabaseClient
-    .from('events')
-    .select('*')
-    .order('date_key', { ascending: true });
-
-  if (error || !data || data.length === 0) {
-    eventsList.innerHTML = '<p class="empty-note">No one-off events added yet.</p>';
-    return;
-  }
-
-  eventsList.innerHTML = '';
-  data.forEach((ev) => {
-    const startDate = new Date(ev.start_utc);
-    const timeLabel = startDate.toLocaleTimeString('en-US', {
-      hour: 'numeric', minute: '2-digit', timeZone: 'UTC'
-    }) + ' UTC';
-
-    const row = document.createElement('div');
-    row.className = 'event-row';
-    row.innerHTML = `
-      <div class="event-row-info">
-        <div class="event-row-date">${ev.date_key}</div>
-        <div class="event-row-title">${ev.title}</div>
-        <div class="event-row-time">${timeLabel} · ${ev.duration_minutes} min${ev.link ? ' · linked' : ''}</div>
-      </div>
-      <div style="display:flex; gap:8px;">
-        <button class="btn-logout" data-edit="${ev.id}">Edit</button>
-        <button class="btn-delete" data-id="${ev.id}">Delete</button>
-      </div>
-    `;
-    row.querySelector('[data-edit]').addEventListener('click', () => {
-      editingId = ev.id;
-      formHeading.textContent = 'Edit Event';
-      addEventBtn.textContent = 'Update Event';
-      cancelEditBtn.style.display = 'inline-block';
-      document.getElementById('eventDate').value = ev.date_key.split('-').map((n, i) => i === 0 ? n : n.padStart(2, '0')).join('-');
-      document.getElementById('eventStartTime').value = startDate.toISOString().slice(11, 16);
-      document.getElementById('eventDuration').value = ev.duration_minutes;
-      document.getElementById('eventTitle').value = ev.title;
-      document.getElementById('eventLink').value = ev.link || '';
-      document.getElementById('eventIcon').value = ev.icon;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    const { error } = await supabaseClient.from('events').insert({
+      date_key: dateKey, title, time, icon,
+      created_by: user.email
     });
-    row.querySelector('.btn-delete').addEventListener('click', async () => {
-      if (editingId === ev.id) resetForm();
-      await supabaseClient.from('events').delete().eq('id', ev.id);
-      await loadEvents();
-    });
-    eventsList.appendChild(row);
+
+    if (error) {
+      addStatus.textContent = 'Something went wrong — try again.';
+      addStatus.className = 'status-msg error';
+    } else {
+      addStatus.textContent = 'Event added!';
+      addStatus.className = 'status-msg success';
+      document.getElementById('eventDate').value = '';
+      document.getElementById('eventTime').value = '';
+      document.getElementById('eventTitle').value = '';
+      setTimeout(() => { addStatus.textContent = ''; }, 3000);
+    }
   });
-}
+
+  // ===== List + delete events =====
+  const eventsList = document.getElementById('eventsList');
+
+  async function loadEvents() {
+    const { data, error } = await supabaseClient
+      .from('events')
+      .select('*')
+      .order('date_key', { ascending: true });
+
+    if (error || !data || data.length === 0) {
+      eventsList.innerHTML = '<p class="empty-note">No one-off events added yet.</p>';
+      return;
+    }
+
+    eventsList.innerHTML = '';
+    data.forEach((ev) => {
+      const row = document.createElement('div');
+      row.className = 'event-row';
+      row.innerHTML = `
+        <div class="event-row-info">
+          <div class="event-row-date">${ev.date_key}</div>
+          <div class="event-row-title">${ev.title}</div>
+          <div class="event-row-time">${ev.time}</div>
+        </div>
+        <button class="btn-delete" data-id="${ev.id}">Delete</button>
+      `;
+      row.querySelector('.btn-delete').addEventListener('click', async () => {
+        await supabaseClient.from('events').delete().eq('id', ev.id);
+      });
+      eventsList.appendChild(row);
+    });
+  }
 </script>
 </html>
