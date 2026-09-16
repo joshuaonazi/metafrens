@@ -1071,28 +1071,13 @@ ul { list-style: none; }
   margin-top: auto;
 }
 /* Add to Calendar Button */
-.cal-event-link {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  padding: 6px;
-  height: 100%;
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
-}
-/* Add to Calendar Button */
 .cal-event-add {
-  position: absolute;
-  bottom: 3px;
-  right: 4px;
   display: inline-flex;
-  color: rgba(255,255,255,.9);
-  background: rgba(0,0,0,.25);
-  border-radius: 4px;
-  padding: 2px;
+  margin-left: 5px;
+  color: rgba(255,255,255,.85);
+  vertical-align: middle;
 }
-.cal-event-add:hover { color: var(--white); background: rgba(0,0,0,.4); }
+.cal-event-add:hover { color: var(--white); }
 
 /* =========================================
    RESOURCES
