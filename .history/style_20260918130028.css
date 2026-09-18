@@ -1521,30 +1521,20 @@ button:focus-visible {
   .cal-dow { font-size: .58rem; text-align: center; padding-bottom: 4px; letter-spacing: 0; }
   .cal-cell { border-radius: 8px; padding: 5px; }
   .cal-daynum { font-size: .65rem; }
-  .cal-event {
-    inset: 3px;
-    padding: 4px;
-    border-radius: 6px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 2px;
-  }
-  .cal-event-top { display: none; } /* hide the icon/date row — title + time is enough on mobile */
+  .cal-event { inset: 3px; padding: 4px; border-radius: 6px; gap: 2px; }
   .cal-event-title {
-    font-size: .52rem;
+    width: 220%;
+    font-size: .55rem;
     line-height: 1.15;
-    white-space: normal;
-    word-break: break-word;
+    white-space: nowrap;
+    transform: scaleX(.45);
+    transform-origin: left center;
   }
-  .cal-event-time {
-    display: block;
-    font-size: .44rem;
-    line-height: 1.1;
-  }
-  .cal-event-add { display: none; } /* the corner icon is replaced by the modal on mobile */
+  .cal-event-time { display: block; font-size: .42rem; line-height: 1; white-space: nowrap; }
+  .cal-event-date { font-size: 0; }  /* hide text, keep the dot as a visual marker */
+  .cal-dot { width: 4px; height: 4px; }
+  .cal-event-icon { width: 14px; height: 14px; }
+  .cal-event-icon svg { width: 9px; height: 9px; }
 
   /* Calendar add Event*/
   .cal-event-add {

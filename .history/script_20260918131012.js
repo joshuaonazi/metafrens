@@ -92,40 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
     '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>'
   ];
 
-    // ===== Mobile event details modal =====
-  const eventModalOverlay = document.getElementById('eventModalOverlay');
-  const eventModalClose = document.getElementById('eventModalClose');
-  const eventModalTitle = document.getElementById('eventModalTitle');
-  const eventModalTime = document.getElementById('eventModalTime');
-  const eventModalXLink = document.getElementById('eventModalXLink');
-  const eventModalCalBtn = document.getElementById('eventModalCalBtn');
-
-  function openEventModal(ev) {
-    eventModalTitle.textContent = ev.title;
-    eventModalTime.textContent = ev.time;
-
-    if (ev.link) {
-      eventModalXLink.href = ev.link;
-      eventModalXLink.style.display = 'flex';
-    } else {
-      eventModalXLink.style.display = 'none';
-    }
-
-    eventModalCalBtn.onclick = () => addToCalendar(ev);
-    eventModalCalBtn.style.display = ev.startUTC ? 'flex' : 'none';
-
-    eventModalOverlay.classList.add('open');
-  }
-
-  function closeEventModal() {
-    eventModalOverlay.classList.remove('open');
-  }
-
-  eventModalClose.addEventListener('click', closeEventModal);
-  eventModalOverlay.addEventListener('click', (e) => {
-    if (e.target === eventModalOverlay) closeEventModal();
-  });
-
   // ICS Generator + Add to Calendar on each event box
   function fmtICS(d) {
   return d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
@@ -286,7 +252,7 @@ function addToCalendar(ev) {
             openEventModal(eventData);
           });
         }
-
+        
         cell.appendChild(eventEl);
       }
 
