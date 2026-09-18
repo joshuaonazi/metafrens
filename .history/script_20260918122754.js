@@ -227,20 +227,14 @@ function addToCalendar(ev) {
           eventEl.innerHTML = `<div class="cal-event-link">${contentHtml}</div>`;
         }
 
-        // A separate, sibling button (not nested inside the link above) —
-        // opens the visitor's own calendar app directly (Apple on iOS,
-        // Google everywhere else) instead of downloading a file
+        // A separate, sibling icon (not nested inside the link above) — downloads the .ics file
         if (eventData.startUTC) {
-          const addBtn = document.createElement('button');
-          addBtn.type = 'button';
+          const addBtn = document.createElement('a');
           addBtn.className = 'cal-event-add';
+          addBtn.href = makeICSDownloadUrl(eventData);
+          addBtn.download = `${eventData.title.replace(/\s+/g, '-')}.ics`;
           addBtn.title = 'Add to calendar';
           addBtn.innerHTML = `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 2v4M16 2v4M12 11v6M9 14h6"/></svg>`;
-          addBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            addToCalendar(eventData);
-          });
           eventEl.appendChild(addBtn);
         }
 

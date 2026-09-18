@@ -93,55 +93,24 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   // ICS Generator + Add to Calendar on each event box
-  function fmtICS(d) {
-  return d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-}
-
-function isApplePlatform() {
-  return /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent) && 'ontouchend' in document || /iPad|iPhone|iPod/.test(navigator.userAgent);
-}
-
-function makeICSBlobUrl(ev) {
-  const end = new Date(ev.startUTC.getTime() + ev.durationMinutes * 60000);
-  const ics = [
-    'BEGIN:VCALENDAR',
-    'VERSION:2.0',
-    'BEGIN:VEVENT',
-    `UID:${ev.title.replace(/\s+/g, '-')}-${fmtICS(ev.startUTC)}@metafrens`,
-    `DTSTAMP:${fmtICS(new Date())}`,
-    `DTSTART:${fmtICS(ev.startUTC)}`,
-    `DTEND:${fmtICS(end)}`,
-    `SUMMARY:${ev.title}`,
-    ev.link ? `URL:${ev.link}` : '',
-    'END:VEVENT',
-    'END:VCALENDAR'
-  ].filter(Boolean).join('\r\n');
-  const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
-  return URL.createObjectURL(blob);
-}
-
-function makeGoogleCalUrl(ev) {
-  const end = new Date(ev.startUTC.getTime() + ev.durationMinutes * 60000);
-  const dates = `${fmtICS(ev.startUTC)}/${fmtICS(end)}`;
-  const params = new URLSearchParams({
-    action: 'TEMPLATE',
-    text: ev.title,
-    dates,
-    details: ev.link ? `More info: ${ev.link}` : ''
-  });
-  return `https://calendar.google.com/calendar/render?${params.toString()}`;
-}
-
-function addToCalendar(ev) {
-  if (isApplePlatform()) {
-    const url = makeICSBlobUrl(ev);
-    window.open(url, '_blank');
-    // Free the blob shortly after — the browser has already opened it
-    setTimeout(() => URL.revokeObjectURL(url), 10000);
-  } else {
-    window.open(makeGoogleCalUrl(ev), '_blank');
+  function makeICSDownloadUrl(ev) {
+    const fmt = (d) => d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+    const end = new Date(ev.startUTC.getTime() + ev.durationMinutes * 60000);
+    const ics = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'BEGIN:VEVENT',
+      `UID:${ev.title.replace(/\s+/g, '-')}-${fmt(ev.startUTC)}@metafrens`,
+      `DTSTAMP:${fmt(new Date())}`,
+      `DTSTART:${fmt(ev.startUTC)}`,
+      `DTEND:${fmt(end)}`,
+      `SUMMARY:${ev.title}`,
+      ev.link ? `URL:${ev.link}` : '',
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].filter(Boolean).join('\r\n');
+    return 'data:text/calendar;charset=utf8,' + encodeURIComponent(ics);
   }
-}
 
   // --- Recurring weekly events ---
   // Alpha Nights = every Friday, Metafrens Hangout = every Sunday.
@@ -227,20 +196,14 @@ function addToCalendar(ev) {
           eventEl.innerHTML = `<div class="cal-event-link">${contentHtml}</div>`;
         }
 
-        // A separate, sibling button (not nested inside the link above) —
-        // opens the visitor's own calendar app directly (Apple on iOS,
-        // Google everywhere else) instead of downloading a file
+        // A separate, sibling icon (not nested inside the link above) — downloads the .ics file
         if (eventData.startUTC) {
-          const addBtn = document.createElement('button');
-          addBtn.type = 'button';
+          const addBtn = document.createElement('a');
           addBtn.className = 'cal-event-add';
+          addBtn.href = makeICSDownloadUrl(eventData);
+          addBtn.download = `${eventData.title.replace(/\s+/g, '-')}.ics`;
           addBtn.title = 'Add to calendar';
           addBtn.innerHTML = `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 2v4M16 2v4M12 11v6M9 14h6"/></svg>`;
-          addBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            addToCalendar(eventData);
-          });
           eventEl.appendChild(addBtn);
         }
 

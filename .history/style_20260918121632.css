@@ -1618,13 +1618,6 @@ button:focus-visible {
   .cal-month-label { font-size: 1.05rem; }
   .cal-nav-btn { width: 30px; height: 30px; }
 
-  /* Cal Add Events */
-  .cal-event-add {
-  width: 18px;
-  height: 18px;
-}
-.cal-event-add svg { width: 9px; height: 9px; }
-
     /* Partners */
   .partners-heading { font-size: 2rem; }
   .partners-sub { font-size: .88rem; }

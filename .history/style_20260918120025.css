@@ -442,7 +442,7 @@ ul { list-style: none; }
   font-weight: 700;
   font-size: 3.2rem;
   color: var(--text-page);
-  margin-top: -8px;
+  margin-top: -10px;
   margin-bottom: 2px;
   text-align: right;
 }
@@ -1511,7 +1511,6 @@ button:focus-visible {
   .event-info-schedule { align-items: flex-start; }
   .cal-topbar { flex-direction: column; align-items: stretch; gap: 14px; }
   .cal-month-nav { justify-content: center; }
-
   /* .cal-add-btn { justify-content: center; } */
   .cal-grid {
     min-width: 0;
@@ -1535,17 +1534,6 @@ button:focus-visible {
   .cal-dot { width: 4px; height: 4px; }
   .cal-event-icon { width: 14px; height: 14px; }
   .cal-event-icon svg { width: 9px; height: 9px; }
-
-  /* Calendar add Event*/
-  .cal-event-add {
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
-.cal-event-add svg { width: 10px; height: 10px; }
 
     /* Partners */
   .partners { padding: 70px 20px 60px; }
@@ -1617,13 +1605,6 @@ button:focus-visible {
   .cal-event-title { font-size: .5rem; }
   .cal-month-label { font-size: 1.05rem; }
   .cal-nav-btn { width: 30px; height: 30px; }
-
-  /* Cal Add Events */
-  .cal-event-add {
-  width: 18px;
-  height: 18px;
-}
-.cal-event-add svg { width: 9px; height: 9px; }
 
     /* Partners */
   .partners-heading { font-size: 2rem; }
