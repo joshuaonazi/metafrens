@@ -1005,16 +1005,10 @@ ul { list-style: none; }
 .cal-cell {
   position: relative;
   aspect-ratio: 1 / 0.6;
-  background: transparent;
-  border: 0;
-  border-right: 1px solid rgba(201,185,245,.16);
-  border-bottom: 1px solid rgba(201,185,245,.16);
-  border-radius: 0;
-  padding: 9px 8px;
-}
-.cal-cell.has-event {
-  background: rgba(119,66,236,.08);
-  border-color: rgba(152,2,212,.42);
+  background: rgba(119,66,236,.04);
+  border: 1px solid rgba(119,66,236,.12);
+  border-radius: 9px;
+  padding: 7px;
 }
 .cal-dow {
   font-size: .78rem;
@@ -1516,7 +1510,7 @@ button:focus-visible {
 
   /* Events calendar */
   .events-cal { padding: 60px 16px; }
-  .cal-main { min-width: 0; overflow: visible; }
+  .cal-main { min-width: 0; overflow: hidden; }
   .event-info-card { padding: 16px; }
   .event-info-title { font-size: 1rem; }
   .event-info-schedule { align-items: flex-start; }
@@ -1524,26 +1518,20 @@ button:focus-visible {
   .cal-month-nav { justify-content: center; }
 
   /* .cal-add-btn { justify-content: center; } */
-  .cal-main {
-    width: 100%;
-    overflow: visible;
-  }
   .cal-grid {
-    grid-template-columns: repeat(7, 78px);
     width: 100%;
     min-width: 0;
-    overflow-x: auto;
-    gap: 6px;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 6px;
+    overflow-x: hidden;
+    gap: 4px;
   }
-  .cal-dow {
-    text-align: center;
+  .cal-main {
+    width: 100%;
+    overflow: hidden;
   }
   .cal-dow { font-size: .58rem; text-align: center; padding-bottom: 4px; letter-spacing: 0; }
   .cal-cell {
-    border-radius: 0;
-    padding: 7px 5px;
+    border-radius: 8px;
+    padding: 5px;
     min-height: 52px;
     height: auto;
   }
@@ -1553,8 +1541,7 @@ button:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 78px;
-    flex-shrink: 0;
+    min-width: 0;
     overflow: hidden;
   }
   .cal-daynum {
@@ -1578,18 +1565,18 @@ button:focus-visible {
   }
   .cal-event-top { display: none; } /* hide the icon/date row — title + time is enough on mobile */
   .cal-event {
-    position: absolute;
-    inset: 4px;
+    position: static;
+    inset: auto;
     justify-content: center;
-    height: auto;
-    min-height: 0;
+    height: 100%;
+    min-height: 44px;
     min-width: 0;
-    width: auto;
+    width: 100%;
   }
   .cal-event-title {
     transform: none !important;
     width: auto !important;
-    font-size: .55rem;
+    font-size: .48rem;
     font-weight: 700;
     line-height: 1.2;
     white-space: normal;
@@ -1656,25 +1643,18 @@ button:focus-visible {
   .cal-grid {
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(7, 78px);
+    grid-template-columns: repeat(7, minmax(0, 1fr));
     min-width: 0;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: visible;
     gap: 7px;
   }
   .cal-cell {
     position: relative;
     aspect-ratio: 1 / 0.78;
-    background: transparent;
-    border: 0;
-    border-right: 1px solid rgba(201,185,245,.16);
-    border-bottom: 1px solid rgba(201,185,245,.16);
-    border-radius: 0;
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 10px;
     padding: 8px;
-  }
-  .cal-cell.has-event {
-    background: rgba(119,66,236,.08);
-    border-color: rgba(152,2,212,.42);
   }
   .cal-event { padding: 3px; }
   .cal-event-top { justify-content: flex-start; }
