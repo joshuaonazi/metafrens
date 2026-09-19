@@ -1514,39 +1514,13 @@ button:focus-visible {
 
   /* .cal-add-btn { justify-content: center; } */
   .cal-grid {
-    width: 100%;
     min-width: 0;
-    overflow-x: hidden;
-    gap: 4px;
-  }
-  .cal-main {
-    width: 100%;
-    overflow: hidden;
+    overflow-x: visible;
+    gap: 5px;
   }
   .cal-dow { font-size: .58rem; text-align: center; padding-bottom: 4px; letter-spacing: 0; }
-  .cal-cell {
-    border-radius: 8px;
-    padding: 5px;
-    min-height: 52px;
-    height: auto;
-  }
+  .cal-cell { border-radius: 8px; padding: 5px; }
   .cal-daynum { font-size: .65rem; }
-
-  .cal-cell {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 0;
-    overflow: hidden;
-  }
-  .cal-daynum {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-  }
-
   .cal-event {
     inset: 3px;
     padding: 4px;
@@ -1560,25 +1534,15 @@ button:focus-visible {
   }
   .cal-event-top { display: none; } /* hide the icon/date row — title + time is enough on mobile */
   .cal-event {
-    position: static;
-    inset: auto;
-    justify-content: center;
-    height: 100%;
-    min-height: 44px;
-    min-width: 0;
-    width: 100%;
+    justify-content: center; /* re-center since only the title remains now */
   }
   .cal-event-title {
-    transform: none !important;
-    width: auto !important;
-    font-size: .48rem;
-    font-weight: 700;
+    font-size: .5rem;
     line-height: 1.2;
     white-space: normal;
     word-break: break-word;
-    overflow: visible;
-    color: var(--white);
-    padding: 0 2px;
+    max-width: 100%;
+    overflow: hidden;
   }
   .cal-event-time {
     display: none;
@@ -1656,7 +1620,8 @@ button:focus-visible {
   .cal-month-label { font-size: 1.05rem; }
   .cal-nav-btn { width: 30px; height: 30px; }
 
-  .cal-event-title { font-size: .46rem; }
+  .cal-event-title { font-size: .36rem; }
+  .cal-event-time { font-size: .32rem; }
 
     /* Partners */
   .partners-heading { font-size: 2rem; }

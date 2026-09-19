@@ -1536,8 +1536,6 @@ button:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 0;
-    overflow: hidden;
   }
   .cal-daynum {
     display: flex;
@@ -1560,13 +1558,11 @@ button:focus-visible {
   }
   .cal-event-top { display: none; } /* hide the icon/date row — title + time is enough on mobile */
   .cal-event {
-    position: static;
+    position: static; /* let it flow naturally and grow with its content, instead of being pinned to a fixed-size box */
     inset: auto;
     justify-content: center;
     height: 100%;
     min-height: 44px;
-    min-width: 0;
-    width: 100%;
   }
   .cal-event-title {
     transform: none !important;
