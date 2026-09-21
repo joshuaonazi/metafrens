@@ -1523,7 +1523,7 @@ button:focus-visible {
   .hero-content { padding: 0 20px; }
   .hero-float { width: 54px; }
   .hero-float-1 { width: 58px; }
-  .hero-float-3 { right: 5%; }
+  .hero-float-3 { right: -3%; }
   .site-header.scrolled { height: 60px; }
   .site-header.scrolled .logo-img { height: 58px; }
 
