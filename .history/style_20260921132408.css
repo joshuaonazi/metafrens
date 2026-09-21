@@ -1413,38 +1413,15 @@ button:focus-visible {
 @media (max-width: 900px) {
   /* Header / Hero */
   .logo-img { height: 72px; }
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding-top: calc(var(--header-h) + 40px);
-    padding-bottom: 60px;
-  }
-  .hero-content { display: contents; }
-  .hero-title,
-  .hero-underline,
-  .hero-sub,
   .hero-mascot-wrap {
-    position: relative;
-    z-index: 2;
-  }
-  .hero-title { order: 1; margin-left: 20px; margin-right: 20px; }
-  .hero-underline {
-    order: 2;
-    margin-bottom: 12px;
-  }
-  .hero-mascot-wrap {
-    order: 3;
     position: relative;
     right: auto; top: auto; transform: none;
     width: min(70vw, 380px);
-    margin: -30px auto 0;
+    margin: 40px auto 0;
   }
-  .hero-sub {
-    order: 4;
-    max-width: 640px;
-    line-height: 1.4;
-    margin: -1px 32px 0;
-  }
+  .hero { flex-direction: column; text-align: center; padding-bottom: 60px; }
+  .hero-content { max-width: 100%; margin-left: 0; padding-left: 32px; padding-right: 32px; }
+  .hero-underline { margin-left: auto; margin-right: auto; }
 
     /* Header */
   .main-nav { display: none; }

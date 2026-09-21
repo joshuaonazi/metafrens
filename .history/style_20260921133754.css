@@ -1437,13 +1437,12 @@ button:focus-visible {
     position: relative;
     right: auto; top: auto; transform: none;
     width: min(70vw, 380px);
-    margin: -30px auto 0;
+    margin: -12px auto 0;
   }
   .hero-sub {
     order: 4;
     max-width: 640px;
-    line-height: 1.4;
-    margin: -1px 32px 0;
+    margin: 8px 32px 0;
   }
 
     /* Header */

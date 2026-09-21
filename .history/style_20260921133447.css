@@ -1428,22 +1428,18 @@ button:focus-visible {
     z-index: 2;
   }
   .hero-title { order: 1; margin-left: 20px; margin-right: 20px; }
-  .hero-underline {
-    order: 2;
-    margin-bottom: 12px;
-  }
+  .hero-underline { order: 2; }
   .hero-mascot-wrap {
     order: 3;
     position: relative;
     right: auto; top: auto; transform: none;
     width: min(70vw, 380px);
-    margin: -30px auto 0;
+    margin: 18px auto 0;
   }
   .hero-sub {
     order: 4;
     max-width: 640px;
-    line-height: 1.4;
-    margin: -1px 32px 0;
+    margin: 28px 32px 0;
   }
 
     /* Header */
