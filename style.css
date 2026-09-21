@@ -458,6 +458,14 @@ ul { list-style: none; }
   padding: 30px 26px;
   transition: border-color .25s, background .25s, transform .25s;
 }
+
+.about-class-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px; /* fixed, identical gap before the paragraph on every card */
+}
+
 .about-card:hover {
   border-color: rgba(119,66,236,.5);
   background: rgba(119,66,236,.09);
@@ -471,13 +479,11 @@ ul { list-style: none; }
   border-radius: 14px;
   background: linear-gradient(135deg, var(--brand-purple), var(--brand-magenta));
   color: var(--white);
-  margin-bottom: 18px;
 }
 .about-card h4 {
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--text-page);
-  margin-bottom: 10px;
 }
 .about-card p {
   font-size: .88rem;
