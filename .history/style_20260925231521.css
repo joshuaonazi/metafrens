@@ -359,7 +359,7 @@ ul { list-style: none; }
 /* Positions are percentages of .hero-mascot-wrap, matched to the reference */
 .hero-float-1 { top: 30%;  left: 10%; width: 55px; }  /* people bubble, upper-left */
 .hero-float-2 { top: 30%;  right: 10%; width: 50px; } /* heart bubble, upper-right */
-.hero-float-3 { top: 58%; right: 15%; width: 65px; } /* rocket bubble, lower-right */
+.hero-float-3 { top: 58%; right: 15%; width: 60px; } /* rocket bubble, lower-right */
 
 /* =========================================
    ABOUT
