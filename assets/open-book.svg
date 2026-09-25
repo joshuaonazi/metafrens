@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+ <defs>
+  <symbol xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" class="lucide lucide-book-open preview-icon" id="svg_2">
+   <path d="m12,5l0,16"/>
+   <path d="m20,19a2,2 0 0 0 2,-2l0,-12a2,2 0 0 0 -2,-2l-4,0a5,5 0 0 0 -4,2a5,5 0 0 0 -4,-2l-4,0a2,2 0 0 0 -2,2l0,12a2,2 0 0 0 2,2l4,0a5,5 0 0 1 4,2a5,5 0 0 1 4,-2l4,0z"/>
+  </symbol>
+ </defs>
+ <g class="layer">
+  <title>Layer 1</title>
+  <use id="svg_3" href="#svg_2" transform="matrix(6.66667 0 0 6.66667 238 137)" fill="#ffffff"/>
+ </g>
+</svg>
