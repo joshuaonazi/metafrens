@@ -6,9 +6,11 @@
 <title>METAFRENS</title>
 <link rel="preconnect" href="https://api.fontshare.com">
 <link href="https://api.fontshare.com/v2/css?f[]=chillax@400,500,600,700&f[]=switzer@400,500,600,700&display=swap" rel="stylesheet">
-<link href="">
+<link rel="icon" href="assets/metafrens-logo-white.png">
+<link rel="apple-touch-icon" href="assets/metafrens-logo-white.png">
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <!-- ===== HEADER / NAV ===== -->
@@ -23,14 +25,22 @@
       <a href="#team" class="nav-link">Team</a>
       <a href="#testimonials" class="nav-link">Testimonials</a>
       <a href="#events" class="nav-link">Events</a>
+      <a href="#resources" class="nav-link">Resources</a>
       <a href="#contact" class="nav-link">Contact</a>
     </nav>
 
-    <a href="https://metafrensapplications.xyz/" target="_blank" class="btn-register">JOIN METAFRENS <span>→</span></a>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8l1.8-1.8M18 6l1.8-1.8"/></svg>
+      </button>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+      <a href="https://metafrensapplications.xyz/" target="_blank" class="btn-register">JOIN METAFRENS <span>→</span></a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -41,8 +51,7 @@
   <div class="hero-content">
     <h1 class="hero-title">METAFRENS</h1>
     <span class="hero-underline"></span>
-    <p class="hero-sub">Metafrens is a curated, close-knit, free-access community of Web3 enthusiasts united by a shared passion for NFTs, Ordinals, and DeFi.
-                    <br>We’re focused on providing quality Web3 education, a supportive environment where members can learn, grow, connect, and access top-tier alphas and opportunities across the Web3 space. </p>
+    <p class="hero-sub">Metafrens is a curated, close-knit community of Web3 enthusiasts, focused on providing quality Web3 education, a supportive environment where members can learn, grow, connect, and access top-tier alphas and opportunities across the Web3 space. We are united by a shared passion for Web3 Education, NFTs, and DeFi. </p>
   </div>
 
   <div class="hero-mascot-wrap">
@@ -52,9 +61,14 @@
     <!-- Floating icon bubbles — placeholders. Point each src at a file on
          your machine (e.g. "assets/icon-people.png"); position/size are
          already set to match the reference image. -->
-    <img src="assets/icon-people.png" alt="Community icon" class="hero-float hero-float-1">
-    <img src="assets/icon-heart.png" alt="Likes icon" class="hero-float hero-float-2">
-    <img src="assets/icon-rocket.png" alt="Growth icon" class="hero-float hero-float-3">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hero-float hero-float-1"><path d="M12 5v16"/><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hero-float hero-float-2"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="hero-float hero-float-3">
+      <path d="M11 13l-2 2a2.5 2.5 0 0 1-3.5-3.5l4-4a2.5 2.5 0 0 1 3.5 0"/>
+      <path d="M13 11l2-2a2.5 2.5 0 0 1 3.5 3.5l-4 4a2.5 2.5 0 0 1-3.5 0"/>
+    </svg>
   </div>
 </section>
 
@@ -66,8 +80,8 @@
     <div class="about-left">
       <!-- <span class="about-eyebrow">WHO WE ARE</span> -->
       <h2 class="about-heading">OUR<span> JOURNEY</span></h2>
-      <p class="about-text">METAFRENS was officially founded in September 2022, and since then, we’ve evolved 
-                              into a vibrant community of Web3 enthusiasts united by a shared passion for NFTs, Ordinals, and DeFi. 
+      <p class="about-text">METAFRENS was officially founded by Sugargirl in September 2022, and since then, we’ve evolved 
+                              into a vibrant community of Web3 enthusiasts united by a shared passion for Web3 Education, NFTs, and DeFi. 
                           <br>We’re dedicated to exploring the latest trends in Web3, fostering fun and insightful conversations, and 
                               creating a space where members can learn, grow, and build meaningful connections.
                           <br>Since our inception, we’ve hosted several onboarding sessions across our private Discord and X Spaces, 
@@ -76,56 +90,84 @@
 
       <div class="about-stats">
         <div class="about-stat">
-          <span class="stat-num">200+</span>
+          <span class="stat-num">300+</span>
           <span class="stat-label">Community Members</span>
         </div>
         <div class="about-stat">
-          <span class="stat-num">30+</span>
-          <span class="stat-label">Events Hosted</span>
+          <span class="stat-num">130+</span>
+          <span class="stat-label">X Spaces</span>
         </div>
         <div class="about-stat">
-          <span class="stat-num">5K+</span>
+          <span class="stat-num">140+</span>
+          <span class="stat-label">Discord Events</span>
+        </div>
+        <div class="about-stat">
+          <span class="stat-num">2K+</span>
           <span class="stat-label">Collaboration</span>
         </div>
         <div class="about-stat">
-          <span class="stat-num">10+</span>
-          <span class="stat-label">Partner Projects</span>
+          <span class="stat-num">60+</span>
+          <span class="stat-label">AMAs</span>
         </div>
       </div>
     </div>
 
     <!-- RIGHT: feature cards -->
     <div class="about-right">
+      <h3 class="about-right-heading"><span>OUR</span> CORE VALUES</h3>
       <div class="about-card">
-        <span class="about-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </span>
-        <h4>Community First</h4>
-        <p>Every decision starts with what actually helps our members grow, not what looks good in a deck.</p>
+        <div class="about-class-header">
+          <span class="about-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open preview-icon"><path d="M12 5v16"/><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/></svg>
+          </span>
+          <h4>Web3 Education</h4>
+        </div>
+        <p>We empower our members to navigate the dynamic world of Web3 through hands-on, 
+          community-driven educational sessions via our Metafrens Hangout Spaces, AMAs and Discord sessions. 
+          Whether you’re a newbie or an OG, our educational sessions help individuals get started, 
+          build their knowledge, and stay updated on the latest trends in the Web3 space.</p>
       </div>
 
       <div class="about-card">
-        <span class="about-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l9 4.5v9L12 21l-9-4.5v-9L12 3z"/><path d="M12 21V12M3 7.5l9 4.5 9-4.5"/></svg>
-        </span>
-        <h4>Web3 Education</h4>
-        <p>Workshops and AMAs that break real concepts down, no jargon, no empty hype, just clarity.</p>
+        <div class="about-class-header">
+          <span class="about-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-group preview-icon"><path d="M17 21a5 5 0 00-10 0"/><path d="M22 10.5a3.5 3.5 0 00-5.507-2.868"/><path d="M7.507 7.632A3.5 3.5 0 002 10.5"/><circle cx="12" cy="13" r="3"/><circle cx="18.5" cy="4.5" r="2.5"/><circle cx="5.5" cy="4.5" r="2.5"/></svg>
+          </span>
+          <h4>Community First</h4>
+        </div>
+        <p>We treat our community like a home, not a feed. We show up for one another, 
+          stay connected, and foster an environment where members genuinely get to know and support each other. 
+          This principle inspired the slang “Metafrens Familia.” Familia is a Spanish word meaning “family,” 
+          reflecting the close-knit bonds, sense of belonging, and genuine connections we continuously strive to build within our community.</p>
       </div>
 
       <div class="about-card">
-        <span class="about-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg>
-        </span>
-        <h4>Global Network</h4>
-        <p>Frens connect across time zones builders, collectors and creators from every corner of Web3.</p>
+        <div class="about-class-header">
+          <span class="about-card-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M11 13l-2 2a2.5 2.5 0 0 1-3.5-3.5l4-4a2.5 2.5 0 0 1 3.5 0"/>
+              <path d="M13 11l2-2a2.5 2.5 0 0 1 3.5 3.5l-4 4a2.5 2.5 0 0 1-3.5 0"/>
+            </svg>
+          </span>
+        <h4>Inclusivity & Mutual Respect</h4>
+        </div>
+        <p>Metafrens welcomes people from all regions and backgrounds, fostering a safe, 
+          inclusive space where everyone feels valued and respected. 
+          Regardless of where you come from or your level of experience in Web3, 
+          whether you’re a complete newbie or a seasoned veteran, there’s a place for you in our community.</p>
       </div>
 
       <div class="about-card">
-        <span class="about-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 3.5v6c0 5-3.5 8.5-8 10.5-4.5-2-8-5.5-8-10.5v-6L12 2z"/></svg>
-        </span>
-        <h4>Safe Space</h4>
-        <p>We actively work to protect newcomers from predatory actors and bad-faith projects.</p>
+        <div class="about-class-header">
+          <span class="about-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake preview-icon"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
+          </span>
+          <h4>Team Work</h4>
+        </div>
+        <p>We believe everyone has something valuable to contribute, regardless of their level of knowledge or 
+          experience in the Web3 space. Whether it’s by sharing alphas, providing valuable updates, 
+          contributing creative skills, consistently supporting the community on X, or showing up for community events, 
+          every contribution adds up and plays a role in making Metafrens the community it is today.</p>
       </div>
     </div>
 
@@ -149,18 +191,12 @@
       <div class="team-col">
         <div class="fade-top"></div>
         <div class="team-track scroll-up">
-          <a href="https://x.com/krrstyn" target="_blank" rel="noopener noreferrer">
-            <div class="member-card">
-              <img src="/assets/team/krrystn.jpg" alt="Team A">
-              <h4>Krrystn</h4> <span>COLLAB MANAGER</span>
-            </div>
-          </a>
-          <a href="https://x.com/totinhiiio" target="_blank" rel="noopener noreferrer">
+          <!-- <a href="https://x.com/totinhiiio" target="_blank" rel="noopener noreferrer">
             <div class="member-card">
               <img src="/assets/team/totinho.jpg" alt="Team B">
               <h4>Totinho</h4> <span>COLLAB MANAGER</span>
             </div>
-          </a>
+          </a> -->
           <a href="https://x.com/themafiaboss420" target="_blank" rel="noopener noreferrer">
             <div class="member-card">
               <img src="/assets/team/themafiaboss.jpg" alt="Team C">
@@ -198,12 +234,6 @@
               <h4>KimmyKim</h4> <span>ALPHA CALLER</span>
             </div>
           </a>
-          <a href="https://x.com/therealsoft" target="_blank" rel="noopener noreferrer">
-            <div class="member-card">
-              <img src="/assets/team/soft.jpg" alt="Team C">
-              <h4>Soft</h4> <span>CREATIVE TEAM</span>
-            </div>
-          </a>
           <a href="https://x.com/btwritess" target="_blank" rel="noopener noreferrer">
             <div class="member-card">
               <img src="/assets/team/bigtee.jpg" alt="Team C">
@@ -219,7 +249,7 @@
           <a href="https://x.com/0xsebastine" target="_blank" rel="noopener noreferrer">
             <div class="member-card">
               <img src="/assets/team/sebastine.jpg" alt="Team C">
-              <h4>Sebastine❤️‍🔥</h4> <span>CREATIVE TEAM</span>
+              <h4>Sebastine❤️‍🔥</h4> <span>CREATIVE & RESEARCH TEAM</span>
             </div>
           </a>
         </div>
@@ -243,19 +273,19 @@
           <a href="https://x.com/exstep" target="_blank" rel="noopener noreferrer">
             <div class="member-card">
               <img src="/assets/team/exstep.jpg" alt="Team D">
-                <h4>Exstep</h4> <span>MODERATOR</span>
+                <h4>Exstep</h4> <span>MODERATOR & COLLAB SUPPORT</span>
             </div>
           </a>
           <a href="https://x.com/ka_nayo_" target="_blank" rel="noopener noreferrer">
             <div class="member-card">
               <img src="/assets/team/kanayo.jpg" alt="Team E">
-                <h4>Kanayo</h4> <span>MODERATOR</span>
+                <h4>Kanayo</h4> <span>MODERATOR & ALPHA CALLER</span>
             </div>
           </a>
           <a href="https://x.com/web3_blizz" target="_blank" rel="noopener noreferrer">
             <div class="member-card">
               <img src="/assets/team/blissonchain.jpg" alt="Team F">
-              <h4>BlissOnchain</h4> <span>MODERATOR</span>
+              <h4>BlissOnchain</h4> <span>MODERATOR & ALPHA CALLER</span>
             </div>
           </a>
           <a href="https://x.com/tweetingintoair" target="_blank" rel="noopener noreferrer">
@@ -267,7 +297,13 @@
           <a href="https://x.com/bhussyjoel" target="_blank" rel="noopener noreferrer">
             <div class="member-card">
               <img src="/assets/team/bhussyjoe.jpg" alt="Team C">
-              <h4>Joe</h4> <span>ALPHA CALLER</span>
+              <h4>Joe</h4> <span>ALPHA CALLER & RESEARCH TEAM</span>
+            </div>
+          </a>
+          <a href="https://x.com/mofeys" target="_blank" rel="noopener noreferrer">
+            <div class="member-card">
+              <img src="/assets/team/mofey.jpg" alt="Team C">
+              <h4>Mofey</h4> <span>COLLAB MANAGER</span>
             </div>
           </a>
           <a href="https://x.com/adewalearobieke" target="_blank" rel="noopener noreferrer">
@@ -289,12 +325,12 @@
               <h4>AraKraft</h4> <span>COLLAB MANAGER</span>
             </div>
           </a>
-          <a href="https://x.com/realtinywhale" target="_blank" rel="noopener noreferrer">
+          <!-- <a href="https://x.com/realtinywhale" target="_blank" rel="noopener noreferrer">
             <div class="member-card">
               <img src="/assets/team/tinywhale.jpg" alt="Team F">
               <h4>TinyWhale</h4> <span>COLLAB MANAGER</span>
             </div>
-          </a>
+          </a> -->
           <a href="https://x.com/justmichael_7" target="_blank" rel="noopener noreferrer">
             <div class="member-card">
               <img src="/assets/team/justinm.jpg" alt="Team C">
@@ -335,38 +371,36 @@
   </div>
 
 <!-- PARTNERSHIP SECTION -->
-<div class="partners-grid">
-<!-- Partner 1 -->
-  <a href="https://x.com/0xAlphaTrack" target="_blank" rel="noopener noreferrer" class="partner-card">
-    <div class="partner-logo-wrap">
-      <img src="assets/partners/alphatrack.png" alt="Partner 1 name" class="partner-logo-img">
-    </div>
-    <div class="partner-info">
-      <h4 class="partner-name">ALPHA TRACK</h4>
-      <span class="partner-label">MetaFrens Partner</span>
-    </div>
-    <span class="partner-x-badge" aria-hidden="true">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.6-6.9L4.2 22H1l8.1-9.3L.7 2h7.3l5 6.3L18.9 2z"/></svg>
-    </span>
-  </a>
+  <div class="partners-grid">
+  <!-- Partner 1 -->
+    <a href="https://x.com/0xAlphaTrack" target="_blank" rel="noopener noreferrer" class="partner-card">
+      <div class="partner-logo-wrap">
+        <img src="assets/partners/alphatrack.png" alt="Partner 1 name" class="partner-logo-img">
+      </div>
+      <div class="partner-info">
+        <h4 class="partner-name">ALPHA TRACK</h4>
+        <span class="partner-label">MetaFrens Partner</span>
+      </div>
+      <span class="partner-x-badge" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.6-6.9L4.2 22H1l8.1-9.3L.7 2h7.3l5 6.3L18.9 2z"/></svg>
+      </span>
+    </a>
 
-  <!-- Partner 2 -->
-  <a href="https://x.com/DailyMintsAI" target="_blank" rel="noopener noreferrer" class="partner-card">
-    <div class="partner-logo-wrap">
-      <img src="assets/partners/dailymints.png" alt="Partner 2 name" class="partner-logo-img">
-    </div>
-    <div class="partner-info">
-      <h4 class="partner-name">DAILY MINTS</h4>
-      <span class="partner-label">MetaFrens Partner</span>
-    </div>
-    <span class="partner-x-badge" aria-hidden="true">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.6-6.9L4.2 22H1l8.1-9.3L.7 2h7.3l5 6.3L18.9 2z"/></svg>
-    </span>
-  </a>
+    <!-- Partner 2 -->
+    <a href="https://x.com/DailyMintsAI" target="_blank" rel="noopener noreferrer" class="partner-card">
+      <div class="partner-logo-wrap">
+        <img src="assets/partners/dailymints.png" alt="Partner 2 name" class="partner-logo-img">
+      </div>
+      <div class="partner-info">
+        <h4 class="partner-name">DAILY MINTS</h4>
+        <span class="partner-label">MetaFrens Partner</span>
+      </div>
+      <span class="partner-x-badge" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.6-6.9L4.2 22H1l8.1-9.3L.7 2h7.3l5 6.3L18.9 2z"/></svg>
+      </span>
+    </a>
 
-</div>
-
-</div>
+  </div>
 
   <div class="partners-cta">
     <span class="cta-icon">
@@ -379,7 +413,7 @@
       <h4>Interested in partnering with METAFRENS?</h4>
       <p>Let's build the future together.</p>
     </div>
-    <a href="#" class="cta-btn">PARTNER WITH US <span>↗</span></a>
+    <a href="https://x.com/The_sugargirl" class="cta-btn">PARTNER WITH US <span>↗</span></a>
   </div>
 </section>
 
@@ -391,12 +425,13 @@
     <div class="testimonial-track">
       <div class="testimonial-set">
         <div class="testimonial-card">
-          <p class="quote">"This is the best free high-value community you'd ever be part of (newbie or not). Whatever your niche is, there's a room for you in Meta. Values ranging from NFT wls, futures trading, regular spaces, etc. They've got it all."</p>
-          <a class="testimonial-author" href="https://x.com/pgreyy" target="_blank" rel="noopener noreferrer">
+          <p class="quote">"I have been working with Metafrens since 2022, as a Team member I have worked and working with amazing set of people who are willing to collaborate and help you grow ,no unhealthy competition.
+                            As a community member, Metafrens is a home for all ; everyone stay together as one big happy family.  Working as a Collab Manager with this community as given lots of exposure that I might never have gotten working with other communities."</p>
+          <a class="testimonial-author" href="https://x.com/arakraftt" target="_blank" rel="noopener noreferrer">
             <!-- USING THE UNAVATAR FETCHES THE PROFILE IMAGE ASSOCIATED WITH EACH X HANDLE, THE IMAGE OF THAT X ACCOUNT IS  LOADED REMOTELY <img src="https://unavatar.io/x/staceomi" alt=""> -->
-            <img src="https://unavatar.io/x/pgreyy" alt="">
+            <img src="https://unavatar.io/x/arakraftt" alt="">
             <div>
-              <h5>@pgreyy</h5>
+              <h5>@arakraftt</h5>
               <span>Metafrens Member</span>
             </div>
           </a>
@@ -408,6 +443,18 @@
             <img src="https://unavatar.io/x/frans6cur" alt="">
             <div>
               <h5>@frans6cur</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="quote">"Since joining Metafrens in 2024, it’s been nothing but growth, learning, and good vibes. 
+                            I’ve connected with amazing people, improved my Web3 journey, and found a true family here. Grateful for the support, wins, and knowledge shared every day."</p>
+          <a class="testimonial-author" href="https://x.com/eth_deecy" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/eth_deecy" alt="">
+            <div>
+              <h5>@eth_deecy</h5>
               <span>Metafrens Member</span>
             </div>
           </a>
@@ -447,7 +494,7 @@
         </div>
 
         <div class="testimonial-card">
-          <p class="quote">"I joined Metafrens late last year and it has been a wonderful and beautiful experience ever since. Through Metafrens I made my first 4figs, I have also grown extraordinary well as a content creator and made a lot of friends and connections by being part of this community."</p>
+          <p class="quote">"I joined Metafrens late 2024 and it has been a wonderful and beautiful experience ever since. Through Metafrens I made my first 4figs, I have also grown extraordinary well as a content creator and made a lot of friends and connections by being part of this community."</p>
           <a class="testimonial-author" href="https://x.com/staceomi" target="_blank" rel="noopener noreferrer">
             <img src="https://unavatar.io/x/staceomi" alt="">
             <div>
@@ -458,7 +505,7 @@
         </div>
 
         <div class="testimonial-card">
-          <p class="quote">"Metafrens was the first community I joined as a newbie in the Web3 space. It gave me a true sense of belonging, friendship and purpose. I am grateful to Shuga, she is an awesome founder, for her support and how she has always carried everyone along like one family here. Happy 3 years anniversary of Metafrens family, growth, and unity."</p>
+          <p class="quote">"Metafrens was the first community I joined as a newbie in the Web3 space. It gave me a true sense of belonging, friendship and purpose. I am grateful to Shuga, she is an awesome founder, for her support and how she has always carried everyone along like one family here."</p>
           <a class="testimonial-author" href="https://x.com/PascalBMS" target="_blank" rel="noopener noreferrer">
             <img src="https://unavatar.io/x/PascalBMS" alt="">
             <div>
@@ -480,6 +527,20 @@
         </div>
 
         <div class="testimonial-card">
+          <p class="quote">"To say I love Metafrens is an understatement. I was onboarded into web3 by an entirely different person, but Metafrens is the reason I am on this path today.
+                            Here I have met some of the most intelligent and amazing people who are not too busy to help a newbie out. 
+                            I have learned so much and made friends with people I deeply admire and respect, Sugar to say the least.
+                            I will be forever grateful to have come across and be a member of this community. Metafrens is home!"</p>
+          <a class="testimonial-author" href="https://x.com/tweetingintoair" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/tweetingintoair" alt="">
+            <div>
+              <h5>@tweetingintoair</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="testimonial-card">
           <p class="quote">"One of the greatest gifts Metafrens has given me is the opportunity to connect with so many amazing people. Through their support, I've been able to grow as a content creator and speaker. They've also helped me in different real life situations. I'm forever grateful to Metafrens for this."</p>
           <a class="testimonial-author" href="https://x.com/VAbifarin" target="_blank" rel="noopener noreferrer">
             <img src="https://unavatar.io/x/VAbifarin" alt="">
@@ -491,13 +552,16 @@
         </div>
       </div>
 
+      <!-- DUPLICATE FOR SMOOTH MOVEMENT -->
+      
       <div class="testimonial-set" aria-hidden="true">
         <div class="testimonial-card">
-          <p class="quote">"This is the best free high-value community you'd ever be part of (newbie or not). Whatever your niche is, there's a room for you in Meta. Values ranging from NFT wls, futures trading, regular spaces, etc — they've got it all."</p>
-          <a class="testimonial-author" href="https://x.com/pgreyy" target="_blank" rel="noopener noreferrer">
-            <img src="https://unavatar.io/x/pgreyy" alt="">
+          <p class="quote">"I have been working with Metafrens since 2022, as a Team member I have worked and working with amazing set of people who are willing to collaborate and help you grow ,no unhealthy competition.
+                            As a community member, Metafrens is a home for all ; everyone stay together as one big happy family.  Working as a Collab Manager with this community as given lots of exposure that I might never have gotten working with other communities."</p>
+          <a class="testimonial-author" href="https://x.com/arakraftt" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/arakraftt" alt="">
             <div>
-              <h5>@pgreyy</h5>
+              <h5>@arakraftt</h5>
               <span>Metafrens Member</span>
             </div>
           </a>
@@ -509,6 +573,18 @@
             <img src="https://unavatar.io/x/frans6cur" alt="">
             <div>
               <h5>@frans6cur</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="quote">"Since joining Metafrens in 2024, it’s been nothing but growth, learning, and good vibes. 
+                            I’ve connected with amazing people, improved my Web3 journey, and found a true family here. Grateful for the support, wins, and knowledge shared every day."</p>
+          <a class="testimonial-author" href="https://x.com/eth_deecy" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/eth_deecy" alt="">
+            <div>
+              <h5>@eth_deecy</h5>
               <span>Metafrens Member</span>
             </div>
           </a>
@@ -548,7 +624,7 @@
         </div>
 
         <div class="testimonial-card">
-          <p class="quote">"I joined Metafrens late last year and it has been a wonderful and beautiful experience ever since. Through Metafrens I made my first 4figs, I have also grown extraordinary well as a content creator and made a lot of friends and connections by being part of this community."</p>
+          <p class="quote">"I joined Metafrens late 2024 and it has been a wonderful and beautiful experience ever since. Through Metafrens I made my first 4figs, I have also grown extraordinary well as a content creator and made a lot of friends and connections by being part of this community."</p>
           <a class="testimonial-author" href="https://x.com/staceomi" target="_blank" rel="noopener noreferrer">
             <img src="https://unavatar.io/x/staceomi" alt="">
             <div>
@@ -559,7 +635,7 @@
         </div>
 
         <div class="testimonial-card">
-          <p class="quote">"Metafrens was the first community I joined as a newbie in the Web3 space. It gave me a true sense of belonging, friendship and purpose. I am grateful to Shuga, she is an awesome founder, for her support and how she has always carried everyone along like one family here. Happy 3 years anniversary of Metafrens family, growth, and unity."</p>
+          <p class="quote">"Metafrens was the first community I joined as a newbie in the Web3 space. It gave me a true sense of belonging, friendship and purpose. I am grateful to Shuga, she is an awesome founder, for her support and how she has always carried everyone along like one family here."</p>
           <a class="testimonial-author" href="https://x.com/PascalBMS" target="_blank" rel="noopener noreferrer">
             <img src="https://unavatar.io/x/PascalBMS" alt="">
             <div>
@@ -575,6 +651,20 @@
             <img src="https://unavatar.io/x/Tripxxzz" alt="">
             <div>
               <h5>@Tripxxzz</h5>
+              <span>Metafrens Member</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="quote">"To say I love Metafrens is an understatement. I was onboarded into web3 by an entirely different person, but Metafrens is the reason I am on this path today.
+                            Here I have met some of the most intelligent and amazing people who are not too busy to help a newbie out. 
+                            I have learned so much and made friends with people I deeply admire and respect, Sugar to say the least.
+                            I will be forever grateful to have come across and be a member of this community. Metafrens is home!"</p>
+          <a class="testimonial-author" href="https://x.com/tweetingintoair" target="_blank" rel="noopener noreferrer">
+            <img src="https://unavatar.io/x/tweetingintoair" alt="">
+            <div>
+              <h5>@tweetingintoair</h5>
               <span>Metafrens Member</span>
             </div>
           </a>
@@ -603,7 +693,7 @@
     <aside class="cal-side">
       <p class="cal-eyebrow">METAFRENS <span>WEEKLY EVENTS</span></p>
         <div class="event-info-card">
-          <h3 class="event-info-title">Alpha Nights</h3>
+          <h3 class="event-info-title">Alpha Night</h3>
           <p class="event-info-text">Our weekly alpha nights are always packed with fresh alphas! It's a time where we come together as a community to share the latest alphas, uncover hidden gems, discuss emerging trends, and stay one step ahead in the ever-evolving Web3 space.</p>
           <p class="event-info-text">Beyond the alphas, it's also a great opportunity to connect, build relationships, and strengthen our community bonds.</p>
           <span class="event-info-schedule">
@@ -619,7 +709,7 @@
           <p class="event-info-text">Our Hangout Spaces also give our wider audience a glimpse into what makes Metafrens Familia unique, including our culture, conversations, and community.</p>
           <span class="event-info-schedule">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-            Every Sunday · 8:00 PM UTC
+            Sundays · 8:00 PM UTC
           </span>
         </div>
     </aside>
@@ -637,13 +727,13 @@
           <h3 class="cal-month-label" id="calMonthLabel">August 2026</h3>
           <button class="cal-nav-btn" id="calNext" aria-label="Next month">›</button>
         </div>
-        <button class="cal-add-btn">
+        <!-- <button class="cal-add-btn">
           ADD TO CALENDAR
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="3" y="4" width="18" height="18" rx="3"></rect>
             <path d="M3 9h18M8 2v4M16 2v4"></path>
           </svg>
-        </button>
+        </button> -->
       </div>
 
       <div class="cal-grid" id="calGrid">
@@ -660,6 +750,104 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- ===== RESOURCES ===== -->
+<section id="resources" class="resources">
+    <h2 class="resources-heading">Resources to Navigate the Web3 Space</h2>
+
+    <div class="resources-scroll">
+
+    <div class="resource-card">
+      <h4>1. Positioning Yourself for Web3 Jobs</h4>
+      <p>Held in February 2023, this Space serves as a guide for anyone looking to build a career in Web3. It covers how to build a strong Web3 portfolio, gain valuable experience, discover job opportunities, and position yourself to get hired within the Web3 ecosystem.</p>
+      <div class="resource-buttons">
+        <a href="https://x.com/i/spaces/1yNGaNAYOVQJj" target="_blank" rel="noopener noreferrer" class="resource-btn">Access the recording 1</a>
+        <a href="https://x.com/i/spaces/1mrGmkAarQWxy" target="_blank" rel="noopener noreferrer" class="resource-btn">Access the recording 2</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <h4>2. Ordinals Onboarding Space</h4>
+      <p>Held in May 2023, this Space provides a beginner-friendly introduction to the Ordinals ecosystem. The discussion covers essential terminology, popular marketplaces, and how to buy, sell, and trade Ordinals on Bitcoin.</p>
+      <div class="resource-buttons">
+        <a href="https://x.com/i/spaces/1ynKOawOzwZJR/peek" target="_blank" rel="noopener noreferrer" class="resource-btn">Access the recording</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <h4>3. Getting Prepared for Runes Protocol Launch</h4>
+      <p>Held in April 2024 ahead of the Runes Protocol launch, this Space provides an introduction to the Runes ecosystem and what participants needed to know ahead of its launch. Topics covered include trading Runes, etching, and useful marketplaces and DEXs within the ecosystem.</p>
+      <div class="resource-buttons">
+        <a href="https://x.com/i/spaces/1MnGnMgpnAkKO" target="_blank" rel="noopener noreferrer" class="resource-btn">Access the recording</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <h4>4. Content Creation in Web3</h4>
+      <p>Held in June 2024, this Space was designed to provide a guide for content creators looking to grow their personal brands within Web3. We spoke with established creators who shared valuable insights on finding inspiration, creating quality content, and growing an audience efficiently within the Web3 space.</p>
+      <div class="resource-buttons">
+        <a href="https://x.com/i/spaces/1lPKqbMZnjWGb" target="_blank" rel="noopener noreferrer" class="resource-btn">Access the recording</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <h4>5. Collab Management in Web3</h4>
+      <p>Held in July 2024, this Space featured experienced collab managers who shared their insights into managing collaborations for Web3 projects. The discussion covers what it means to be a collab manager, best practices for approaching other collab managers, and how to identify promising projects to collaborate with.</p>
+      <div class="resource-buttons">
+        <a href="https://x.com/i/spaces/1mnGeAyAmAYGX" target="_blank" rel="noopener noreferrer" class="resource-btn">Access the recording</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <h4>6. Emerging Ecosystems (Monad & Berachain)</h4>
+      <p>Held in January 2025, this Space explored two emerging ecosystems at the time: Monad and Berachain. We discussed their unique architecture and potential, while also exploring promising upcoming projects and potential airdrop opportunities within both ecosystems.</p>
+      <div class="resource-buttons">
+        <a href="https://x.com/i/spaces/1ynJODDLNbwxR" target="_blank" rel="noopener noreferrer" class="resource-btn">Access the recording</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <h4>7. Introduction to Abstract Chain</h4>
+      <p>Held in January 2025, this Space provides an introduction to Abstract Chain. We discussed what differentiates it from other Ethereum Layer 2 networks, the potential drivers of its growth and success, and how community members could position themselves for future opportunities.</p>
+      <div class="resource-buttons">
+        <a href="https://x.com/i/spaces/1LyGBgoLygrJN" target="_blank" rel="noopener noreferrer" class="resource-btn">Access the recording</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <h4>8. AI and Vibecoding in Web3</h4>
+      <p>Held in April 2026, this Space explored essential concepts surrounding the use of AI and vibecoding in Web3. We discussed useful AI tools and resources.</p>
+      <div class="resource-buttons">
+        <a href="https://x.com/i/spaces/1dxYljdlwoEJX" target="_blank" rel="noopener noreferrer" class="resource-btn">Access the recording</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <h4>9. Prediction Markets</h4>
+      <p>Held in June 2026 during the World Cup, this Space explored prediction markets and predictive analysis in Web3, particularly within the context of sports. The discussion covers how prediction markets work, dedicated marketplaces and dApps, and important considerations when participating in sports prediction markets.</p>
+      <div class="resource-buttons">
+        <a href="https://x.com/i/spaces/1yJAPPODrpzGb" target="_blank" rel="noopener noreferrer" class="resource-btn">Access the recording</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <h4>10. Trading Strategies</h4>
+      <p>Held in June 2026, this Space explored different trading strategies used by crypto traders and discussed which approaches may be better suited to different market conditions. The conversation also covers the importance of adapting to volatile markets, making informed trading decisions, and understanding when to consider holding or selling an asset.</p>
+      <div class="resource-buttons">
+        <a href="https://x.com/i/spaces/1YxNrrqMzWNxw" target="_blank" rel="noopener noreferrer" class="resource-btn">Access the recording</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <h4>11. Robinhood Ecosystem</h4>
+      <p>Held in August 2026, this Space explored the emergence of the Robinhood ecosystem, what sets it apart from previous Ethereum L2s, and the factors that could influence its growth and adoption. We also discussed how community members could stay positioned for upcoming NFT drops, memecoins, and potential future airdrop opportunities.</p>
+      <div class="resource-buttons">
+        <a href="https://x.com/i/spaces/1qxoNNllMbNJv" target="_blank" rel="noopener noreferrer" class="resource-btn">Access the recording</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -696,7 +884,7 @@
           </span>
           <span class="contact-card-text">
             <span class="contact-card-label">GENERAL INQUIRIES</span>
-            <span class="contact-card-value">METAFRENS</span>
+            <span class="contact-card-value">@Metafrens01</span>
           </span>
           <span class="contact-card-arrow">→</span>
         </a>
@@ -720,7 +908,7 @@
         </span>
         <span class="logo-text">METAFRENS</span>
       </a>
-      <p>Building the future of on-chain community, one fren at a time.</p>
+      <p>Building the future of Web3, one fren at a time.</p>
     </div>
 
     <div class="footer-links">
@@ -743,6 +931,25 @@
     <p>&copy; 2026 MetaFrens. All rights reserved.</p>
   </div>
 </footer>
+
+<!-- ===== EVENT DETAILS MODAL BACKUP (mobile calendar tap) ===== -->
+<div class="event-modal-overlay" id="eventModalOverlay">
+  <div class="event-modal">
+    <button class="event-modal-close" id="eventModalClose" aria-label="Close">&times;</button>
+    <h3 class="event-modal-title" id="eventModalTitle"></h3>
+    <p class="event-modal-time" id="eventModalTime"></p>
+    <div class="event-modal-actions">
+      <a class="event-modal-btn event-modal-x" id="eventModalXLink" target="_blank" rel="noopener noreferrer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.6-6.9L4.2 22H1l8.1-9.3L.7 2h7.3l5 6.3L18.9 2z"/></svg>
+        Open X Space
+      </a>
+      <button class="event-modal-btn event-modal-cal" id="eventModalCalBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
+        Add to Calendar
+      </button>
+    </div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
