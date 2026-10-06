@@ -498,6 +498,7 @@ ul { list-style: none; }
   position: relative;
   padding: 100px 32px 110px;
   overflow: hidden;
+  font: --var(--font-display);
 }
 .team-bg { position: absolute; inset: 0; display: flex; z-index: 0; }
 .team-bg-left {
