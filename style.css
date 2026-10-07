@@ -1436,7 +1436,7 @@ button:focus-visible {
     order: 3;
     position: relative;
     right: auto; top: auto; transform: none;
-    width: min(70vw, 380px);
+    width: min(55vw, 340px);
     margin: -30px auto 0;
   }
   .hero-sub {
@@ -1521,9 +1521,10 @@ button:focus-visible {
   /* Header / Hero */
   .nav-wrap { padding: 0 20px; }
   .hero-content { padding: 0 20px; }
-  .hero-float { width: 54px; }
-  .hero-float-1 { width: 58px; }
-  .hero-float-3 { right: 5%; }
+  .hero-mascot-wrap { width: min(62vw, 280px); }
+  .hero-float { width: 40px; }
+  .hero-float-1 { width: 44px; }
+  .hero-float-3 { width: 48px; right: 5%; }
   .site-header.scrolled { height: 60px; }
   .site-header.scrolled .logo-img { height: 58px; }
 
